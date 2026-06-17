@@ -521,13 +521,12 @@ img {
 /* HMI demo video */
 .project-video {
   width: 100%;
-  max-height: 560px;
+  max-height: 520px;
   display: block;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   margin-top: 0.75rem;
   margin-bottom: 1.25rem;
-  background: #000;
 }
 
 /* Screenshot grid (4 thumbnails) */
@@ -778,6 +777,9 @@ a.project-card:hover {
 
 .project-cover-image img {
   width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center top;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
