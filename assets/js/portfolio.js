@@ -114,12 +114,14 @@ document.addEventListener('DOMContentLoaded', () => {
       current = (index + items.length) % items.length;
       const item = items[current];
       lbImg.style.opacity = '0';
-      setTimeout(() => {
+      const temp = new Image();
+      temp.onload = () => {
         lbImg.src         = item.dataset.src;
         lbImg.alt         = item.dataset.caption || '';
         lbCap.textContent = item.dataset.caption || '';
         lbImg.style.opacity = '1';
-      }, 150);
+      };
+      temp.src = item.dataset.src;
     };
 
     const open = (index) => {
