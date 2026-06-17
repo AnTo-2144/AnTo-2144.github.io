@@ -105,14 +105,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('lightbox');
 
   if (lightbox) {
-    const items = Array.from(document.querySelectorAll('.gallery-item'));
-    const lbImg = lightbox.querySelector('.lightbox-img');
-    const lbCap = lightbox.querySelector('.lightbox-caption');
+    const items   = Array.from(document.querySelectorAll('.gallery-item'));
+    const lbImg   = lightbox.querySelector('.lightbox-img');
+    const lbCap   = lightbox.querySelector('.lightbox-caption');
+    let   current = 0;
 
-    const open = (item) => {
-      lbImg.src         = item.dataset.src;
-      lbImg.alt         = item.dataset.caption || '';
-      lbCap.textContent = item.dataset.caption || '';
+    const show = (index) => {
+      current = (index + items.length) % items.length;
+      const item = items[current];
+      lbImg.style.opacity = '0';
+      setTimeout(() => {
+        lbImg.src         = item.dataset.src;
+        lbImg.alt         = item.dataset.caption || '';
+        lbCap.textContent = item.dataset.caption || '';
+        lbImg.style.opacity = '1';
+      }, 150);
+    };
+
+    const open = (index) => {
+      show(index);
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
@@ -124,13 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
       document.documentElement.style.overflow = '';
     };
 
-    items.forEach(item => item.addEventListener('click', () => open(item)));
+    items.forEach((item, i) => item.addEventListener('click', () => open(i)));
 
     lightbox.querySelector('.lightbox-backdrop').addEventListener('click', close);
     lightbox.querySelector('.lightbox-close').addEventListener('click', close);
+    lightbox.querySelector('.lightbox-prev').addEventListener('click', () => show(current - 1));
+    lightbox.querySelector('.lightbox-next').addEventListener('click', () => show(current + 1));
 
     document.addEventListener('keydown', e => {
-      if (lightbox.classList.contains('open') && e.key === 'Escape') close();
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape')     close();
+      if (e.key === 'ArrowLeft')  show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
     });
   }
 
