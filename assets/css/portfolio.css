@@ -71,16 +71,19 @@ img {
 
 /* --- Section Shared --- */
 #home,
-#featured-projects,
 #projects,
 #contact {
   padding: 100px 0;
 }
 
 /* Alternating background for visual rhythm */
-#featured-projects,
 #contact {
   background: var(--color-bg-alt);
+}
+
+/* Projects page: first section needs extra top offset for fixed nav */
+.projects-page #projects {
+  padding-top: calc(var(--nav-height) + 80px);
 }
 
 /* --- Section Header --- */
@@ -1250,7 +1253,6 @@ a.project-card:hover {
 
   /* Section spacing */
   #home,
-  #featured-projects,
   #projects,
   #contact {
     padding: 70px 0;
