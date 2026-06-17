@@ -133,9 +133,26 @@
       <!-- Gallery -->
       <div class="content-section fade-in">
         <h2 class="section-heading">Gallery</h2>
-        <div class="gallery-placeholder">
-          <i class="fas fa-images"></i>
-          <p>CAD renders, prototype photos and demonstration videos will be added here.</p>
+        <div class="gallery-grid">
+
+          <div class="gallery-item" data-src="../images/TenniCollect-1.png"
+               data-caption="Isometric CAD render of the TenniCollect robot showing the chassis, drive wheels, motor assembly and front collection intake">
+            <img src="../images/TenniCollect-1.png" alt="TenniCollect chassis isometric view" />
+            <p class="gallery-caption">Chassis — isometric render with wheels and intake</p>
+          </div>
+
+          <div class="gallery-item" data-src="../images/TenniCollect-2.png"
+               data-caption="Full assembly render of the TenniCollect robot body shell, showing smooth exterior curves and wheel well cutouts">
+            <img src="../images/TenniCollect-2.png" alt="TenniCollect full assembly body shell" />
+            <p class="gallery-caption">Full assembly — body shell render</p>
+          </div>
+
+          <div class="gallery-item" data-src="../images/TenniCollect-3.png"
+               data-caption="Exploded assembly view showing the robot chassis plate, body shell and mechanical component layout with structural connectors">
+            <img src="../images/TenniCollect-3.png" alt="TenniCollect exploded assembly view" />
+            <p class="gallery-caption">Exploded view — chassis, body and component layout</p>
+          </div>
+
         </div>
       </div>
 
@@ -196,6 +213,18 @@
       <p>&copy; 2026 Antonio Simoes. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-backdrop"></div>
+    <button class="lightbox-close" aria-label="Close"><i class="fas fa-times"></i></button>
+    <button class="lightbox-prev"  aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-next"  aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" src="" alt="" />
+      <p class="lightbox-caption"></p>
+    </div>
+  </div>
 
   <script src="../assets/js/portfolio.js"></script>
 </body>
