@@ -128,13 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
       show(index);
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
     };
 
     const close = () => {
       lightbox.classList.remove('open');
       document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
     };
 
     items.forEach((item, i) => item.addEventListener('click', () => open(i)));
