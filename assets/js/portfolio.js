@@ -5,8 +5,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ----------------------------------------------------------
-     Page-exit transition — fade out before navigating away
-     Only applies to same-site relative links (not anchors / mailto / external)
+     Page-exit transition — fade out then navigate
+     Uses inline styles so CSS specificity can never block it.
+     Navigation is always guaranteed via the setTimeout fallback.
   ---------------------------------------------------------- */
   document.querySelectorAll('a[href]').forEach(link => {
     const href = link.getAttribute('href');
@@ -18,9 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isInternal) {
       link.addEventListener('click', e => {
+        // Guard: don't double-fire if already navigating
+        if (document._navigating) return;
+        document._navigating = true;
+
         e.preventDefault();
-        document.body.classList.add('is-leaving');
-        setTimeout(() => { window.location.href = href; }, 280);
+
+        // Inline fade-out — avoids all CSS specificity issues
+        document.body.style.transition = 'opacity 0.2s ease';
+        document.body.style.opacity   = '0';
+
+        // Navigate after the fade
+        setTimeout(() => { window.location.href = href; }, 220);
       });
     }
   });

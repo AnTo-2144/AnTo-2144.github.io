@@ -685,13 +685,7 @@ body {
   animation: pageFadeIn 0.35s ease forwards;
 }
 
-body.is-leaving {
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  animation: none;
-  pointer-events: none;
-}
+/* body fade-out is applied via inline styles in portfolio.js */
 
 /* Card links — reset <a> defaults when the whole card is a link */
 a.project-card {
