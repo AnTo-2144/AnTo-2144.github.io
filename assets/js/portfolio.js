@@ -105,25 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('lightbox');
 
   if (lightbox) {
-    const items    = Array.from(document.querySelectorAll('.gallery-item'));
-    const lbImg    = lightbox.querySelector('.lightbox-img');
-    const lbCap    = lightbox.querySelector('.lightbox-caption');
-    let   current  = 0;
+    const items = Array.from(document.querySelectorAll('.gallery-item'));
+    const lbImg = lightbox.querySelector('.lightbox-img');
+    const lbCap = lightbox.querySelector('.lightbox-caption');
 
-    const show = (index) => {
-      current = (index + items.length) % items.length;
-      const item = items[current];
-      lbImg.style.opacity = '0';
-      setTimeout(() => {
-        lbImg.src        = item.dataset.src;
-        lbImg.alt        = item.dataset.caption || '';
-        lbCap.textContent = item.dataset.caption || '';
-        lbImg.style.opacity = '1';
-      }, 150);
-    };
-
-    const open = (index) => {
-      show(index);
+    const open = (item) => {
+      lbImg.src         = item.dataset.src;
+      lbImg.alt         = item.dataset.caption || '';
+      lbCap.textContent = item.dataset.caption || '';
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
@@ -135,21 +124,13 @@ document.addEventListener('DOMContentLoaded', () => {
       document.documentElement.style.overflow = '';
     };
 
-    // Open on gallery item click
-    items.forEach((item, i) => item.addEventListener('click', () => open(i)));
+    items.forEach(item => item.addEventListener('click', () => open(item)));
 
-    // Controls
     lightbox.querySelector('.lightbox-backdrop').addEventListener('click', close);
     lightbox.querySelector('.lightbox-close').addEventListener('click', close);
-    lightbox.querySelector('.lightbox-prev').addEventListener('click', () => show(current - 1));
-    lightbox.querySelector('.lightbox-next').addEventListener('click', () => show(current + 1));
 
-    // Keyboard navigation
     document.addEventListener('keydown', e => {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape')      close();
-      if (e.key === 'ArrowLeft')   show(current - 1);
-      if (e.key === 'ArrowRight')  show(current + 1);
+      if (lightbox.classList.contains('open') && e.key === 'Escape') close();
     });
   }
 
