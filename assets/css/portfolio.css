@@ -871,11 +871,10 @@ a.project-card:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   max-width: min(90vw, 1100px);
-  max-height: 92vh;
   padding: 1rem;
-  overflow-y: auto;
 }
 
 .lightbox-img {
