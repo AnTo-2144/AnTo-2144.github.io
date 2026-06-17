@@ -5,6 +5,28 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ----------------------------------------------------------
+     Page-exit transition — fade out before navigating away
+     Only applies to same-site relative links (not anchors / mailto / external)
+  ---------------------------------------------------------- */
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    const isInternal = href
+      && !href.startsWith('#')
+      && !href.startsWith('mailto:')
+      && !href.startsWith('tel:')
+      && !href.includes('://');
+
+    if (isInternal) {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.body.classList.add('is-leaving');
+        setTimeout(() => { window.location.href = href; }, 280);
+      });
+    }
+  });
+
+
+  /* ----------------------------------------------------------
      Mobile nav toggle
   ---------------------------------------------------------- */
   const navToggle = document.getElementById('navToggle');

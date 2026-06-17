@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>DungeonMaze | Antonio Simoes</title>
+  <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="../assets/css/portfolio.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">AS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#home">Home</a></li>
+        <li><a href="../index.html#projects" class="active">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-social">
+        <a href="#" class="nav-icon" title="LinkedIn" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" class="nav-icon" title="GitHub" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:#" class="nav-icon" title="Email" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PROJECT HERO -->
+  <div class="project-hero">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Projects
+      </a>
+      <h1 class="project-hero-title">DungeonMaze</h1>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Game Logic</span>
+      </div>
+      <p class="project-hero-intro">
+        A dungeon maze game built in Python featuring procedural maze generation, interactive
+        player mechanics and logic-based puzzle systems — designed to explore algorithm design
+        and interactive software development.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROJECT CONTENT -->
+  <main class="project-content">
+    <div class="container">
+
+      <!-- Overview -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">Overview</h2>
+        <p class="body-text">
+          DungeonMaze is a Python-based game project centred around procedural maze generation
+          and interactive gameplay. The project was built to explore core computer science concepts
+          including graph traversal algorithms, game state management and event-driven programming.
+        </p>
+        <p class="body-text">
+          The game generates a unique dungeon maze on each run, challenging the player to navigate
+          through rooms, solve logic puzzles and reach the exit.
+        </p>
+      </div>
+
+      <!-- Gameplay Features -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">Gameplay Features</h2>
+        <ul class="feature-list">
+          <li><i class="fas fa-check-circle"></i> Procedural maze generation using graph-based algorithms</li>
+          <li><i class="fas fa-check-circle"></i> Interactive player movement and navigation</li>
+          <li><i class="fas fa-check-circle"></i> Collision detection and boundary handling</li>
+          <li><i class="fas fa-check-circle"></i> Logic-based puzzle systems within rooms</li>
+          <li><i class="fas fa-check-circle"></i> Game state management (start, play, win, game over)</li>
+          <li><i class="fas fa-check-circle"></i> Score tracking and performance feedback</li>
+          <li><i class="fas fa-check-circle"></i> Unique maze layout generated on each new game</li>
+          <li><i class="fas fa-check-circle"></i> Clean and readable terminal or graphical interface</li>
+        </ul>
+      </div>
+
+      <!-- Technologies Used -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">Technologies Used</h2>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <div class="tech-item-icon"><i class="fab fa-python"></i></div>
+            <div>
+              <div class="tech-item-name">Python</div>
+              <div class="tech-item-desc">Core game logic, maze generation and player mechanics</div>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon"><i class="fas fa-dice-d20"></i></div>
+            <div>
+              <div class="tech-item-name">Game Logic</div>
+              <div class="tech-item-desc">State machines, event handling and game loop architecture</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">Gallery</h2>
+        <div class="gallery-placeholder">
+          <i class="fas fa-images"></i>
+          <p>Screenshots and gameplay recordings will be added here.</p>
+        </div>
+      </div>
+
+      <!-- Challenges -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">Challenges</h2>
+        <p class="body-text">
+          Implementing a robust maze generation algorithm that consistently produces solvable and
+          interesting dungeon layouts required careful study of graph traversal techniques. Ensuring
+          that every generated maze had a valid path from start to exit without creating isolated
+          regions was a key algorithmic challenge.
+        </p>
+        <p class="body-text">
+          Designing a clean game loop that handled player input, state transitions and puzzle logic
+          simultaneously — without introducing race conditions or unresponsive behaviour — required
+          structured event-driven design.
+        </p>
+      </div>
+
+      <!-- What I Learned -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">What I Learned</h2>
+        <div class="two-col">
+          <p class="body-text">
+            This project taught me how to apply graph theory concepts practically, particularly
+            depth-first search and randomised Prim's algorithm for maze generation. Thinking about
+            procedural generation helped me understand how algorithms can create varied, replayable
+            content from simple rules.
+          </p>
+          <p class="body-text">
+            Structuring the game using a state machine pattern significantly improved code clarity
+            and maintainability. Managing game state explicitly rather than relying on ad-hoc
+            conditionals is a lesson that applies well beyond game development.
+          </p>
+        </div>
+      </div>
+
+      <!-- Future Improvements -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">Future Improvements</h2>
+        <ul class="improvement-list">
+          <li>Add a graphical user interface with sprite-based visuals</li>
+          <li>Implement multiple maze generation algorithms selectable by the player</li>
+          <li>Introduce enemy AI with basic pathfinding behaviour</li>
+          <li>Add a level progression system with increasing difficulty</li>
+          <li>Implement a local high-score leaderboard</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 Antonio Simoes. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/portfolio.js"></script>
+</body>
+</html>

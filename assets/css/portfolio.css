@@ -673,6 +673,274 @@ img {
 
 
 /* ============================================================
+   PAGE TRANSITIONS
+   ============================================================ */
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+body {
+  animation: pageFadeIn 0.35s ease forwards;
+}
+
+body.is-leaving {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  animation: none;
+  pointer-events: none;
+}
+
+/* Card links — reset <a> defaults when the whole card is a link */
+a.project-card {
+  display: flex;
+  cursor: pointer;
+  color: inherit;
+}
+
+a.project-card:hover {
+  color: inherit;
+}
+
+/* Button row inside cards */
+.card-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+
+/* ============================================================
+   PROJECT PAGE — HERO
+   ============================================================ */
+
+.project-hero {
+  padding: calc(var(--nav-height) + 64px) 0 56px;
+  background: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 1.75rem;
+  transition: color var(--transition), gap var(--transition);
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+  gap: 0.7rem;
+}
+
+.project-hero-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+}
+
+.project-hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 0.85rem;
+}
+
+.project-hero-intro {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 740px;
+  margin-top: 1.1rem;
+}
+
+/* Tags row in hero — reuse existing .tech-tags + .tech-tag */
+.project-hero .tech-tags {
+  margin-top: 1rem;
+}
+
+
+/* ============================================================
+   PROJECT PAGE — CONTENT
+   ============================================================ */
+
+.project-content {
+  padding: 0 0 80px;
+}
+
+.content-section {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.content-section:last-child {
+  border-bottom: none;
+}
+
+/* Section heading with left accent bar */
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1.35rem;
+}
+
+.section-heading::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 1.15em;
+  background: var(--color-primary);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.body-text {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+}
+
+.body-text + .body-text {
+  margin-top: 0.85rem;
+}
+
+/* Feature checklist */
+.feature-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem 2rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.feature-list li i {
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  margin-top: 0.18rem;
+  flex-shrink: 0;
+}
+
+/* Technology grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+}
+
+.tech-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-icon-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.tech-item-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.tech-item-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Two-column text layout */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+/* Improvements list */
+.improvement-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.improvement-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.improvement-list li::before {
+  content: '→';
+  color: var(--color-primary);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Gallery placeholder (for pages without real screenshots yet) */
+.gallery-placeholder {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  background: var(--color-bg-alt);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gallery-placeholder i {
+  font-size: 2rem;
+  color: var(--color-border);
+}
+
+.gallery-placeholder p {
+  font-size: 0.875rem;
+}
+
+
+/* ============================================================
    SCROLL ANIMATIONS
    ============================================================ */
 
@@ -729,6 +997,11 @@ img {
   .project-screenshots {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Project page — tablet */
+  .feature-list { grid-template-columns: 1fr; }
+  .tech-grid    { grid-template-columns: 1fr; }
+  .two-col      { grid-template-columns: 1fr; gap: 1.25rem; }
 
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -810,5 +1083,12 @@ img {
     grid-template-columns: 1fr;
     max-width: 340px;
   }
+
+  /* Project page — mobile */
+  .project-hero-title { font-size: 1.85rem; }
+  .content-section    { padding: 2rem 0; }
+  .feature-list       { grid-template-columns: 1fr; }
+  .tech-grid          { grid-template-columns: 1fr; }
+  .two-col            { grid-template-columns: 1fr; gap: 1rem; }
 
 }
