@@ -57,6 +57,11 @@
         Management System and real-time analytics dashboards — all containerised with Docker.
       </p>
     </div>
+
+    <!-- Cover image -->
+    <div class="project-cover-image">
+      <img src="../images/lip-balm-6.png" alt="The finished lip balm product simulated by the production line" />
+    </div>
   </div>
 
   <!-- PROJECT CONTENT -->
@@ -141,12 +146,33 @@
           Your browser does not support the video tag.
         </video>
 
-        <!-- Screenshots -->
-        <div class="project-screenshots">
-          <img src="../images/lip-balm-1.png" alt="CMMS Dashboard" />
-          <img src="../images/lip-balm-2.png" alt="Grafana Maintenance Dashboard" />
-          <img src="../images/lip-balm-3.png" alt="Grafana Production Monitoring" />
-          <img src="../images/lip-balm-4.png" alt="Work Order Details Form" />
+        <!-- Screenshot grid — click any image to open full view -->
+        <div class="gallery-grid">
+
+          <div class="gallery-item" data-src="../images/lip-balm-1.png"
+               data-caption="CMMS dashboard showing 9 tracked assets, open work orders, total downtime hours and low-stock part alerts">
+            <img src="../images/lip-balm-1.png" alt="CMMS Dashboard" />
+            <p class="gallery-caption">CMMS Dashboard — asset and work order overview</p>
+          </div>
+
+          <div class="gallery-item" data-src="../images/lip-balm-2.png"
+               data-caption="Grafana maintenance dashboard displaying open vs closed work order trends and maintenance cost over time">
+            <img src="../images/lip-balm-2.png" alt="Grafana Maintenance Dashboard" />
+            <p class="gallery-caption">Grafana — maintenance trends and cost analysis</p>
+          </div>
+
+          <div class="gallery-item" data-src="../images/lip-balm-3.png"
+               data-caption="Grafana production monitoring panel showing real-time blend temperature and tube production counts per batch">
+            <img src="../images/lip-balm-3.png" alt="Grafana Production Monitoring" />
+            <p class="gallery-caption">Grafana — real-time production monitoring</p>
+          </div>
+
+          <div class="gallery-item" data-src="../images/lip-balm-4.png"
+               data-caption="Work order creation form for assigning preventive maintenance tasks, priority levels and due times to production assets">
+            <img src="../images/lip-balm-4.png" alt="Work Order Form" />
+            <p class="gallery-caption">CMMS — work order creation form</p>
+          </div>
+
         </div>
       </div>
 
@@ -205,6 +231,18 @@
       <p>&copy; 2026 Antonio Simoes. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-backdrop"></div>
+    <button class="lightbox-close" aria-label="Close"><i class="fas fa-times"></i></button>
+    <button class="lightbox-prev"  aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-next"  aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" src="" alt="" />
+      <p class="lightbox-caption"></p>
+    </div>
+  </div>
 
   <script src="../assets/js/portfolio.js"></script>
 </body>
