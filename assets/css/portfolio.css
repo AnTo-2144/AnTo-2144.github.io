@@ -525,6 +525,7 @@ img {
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
   background: #000;
 }
 
@@ -790,7 +791,7 @@ a.project-card:hover {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.25rem;
   margin-top: 1.25rem;
 }
 
@@ -810,9 +811,8 @@ a.project-card:hover {
 
 .gallery-item img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  background: #111;      /* dark bg so wide dashboard screenshots show fully */
+  height: 200px;
+  object-fit: cover;
   display: block;
   transition: opacity var(--transition);
 }
@@ -824,7 +824,7 @@ a.project-card:hover {
 .gallery-caption {
   font-size: 0.8rem;
   color: var(--color-text-muted);
-  padding: 0.6rem 0.85rem;
+  padding: 0.625rem 0.875rem;
   line-height: 1.4;
   border-top: 1px solid var(--color-border);
   background: var(--color-bg-alt);
@@ -955,7 +955,7 @@ a.project-card:hover {
 }
 
 .content-section {
-  padding: 3rem 0;
+  padding: 3.75rem 0;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -1263,7 +1263,7 @@ a.project-card:hover {
 
   /* Project page — mobile */
   .project-hero-title { font-size: 1.85rem; }
-  .content-section    { padding: 2rem 0; }
+  .content-section    { padding: 2.5rem 0; }
   .feature-list       { grid-template-columns: 1fr; }
   .tech-grid          { grid-template-columns: 1fr; }
   .two-col            { grid-template-columns: 1fr; gap: 1rem; }
