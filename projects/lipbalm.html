@@ -136,6 +136,108 @@
         </div>
       </div>
 
+      <!-- Software Architecture -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">Software Architecture</h2>
+        <p class="body-text">
+          The system is structured across four layers, each with a clearly defined responsibility.
+          All services are containerised with Docker, allowing them to be spun up together on any machine
+          with a single command.
+        </p>
+
+        <div class="arch-diagram">
+
+          <div class="arch-docker-badge">
+            <i class="fab fa-docker"></i>&nbsp; Docker Containerised Environment
+          </div>
+
+          <!-- Presentation Layer -->
+          <div class="arch-layer">
+            <span class="arch-layer-tag">Presentation Layer</span>
+            <div class="arch-boxes">
+              <div class="arch-box arch-box--cyan">
+                <i class="fas fa-desktop arch-box-icon"></i>
+                <strong class="arch-box-title">HMI</strong>
+                <span class="arch-box-sub">Operator interface — production control, batch launch and live status</span>
+              </div>
+              <div class="arch-box arch-box--cyan">
+                <i class="fas fa-chart-area arch-box-icon"></i>
+                <strong class="arch-box-title">Grafana</strong>
+                <span class="arch-box-sub">Live dashboards — production KPIs, maintenance trends and cost analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="arch-connector"><i class="fas fa-chevron-down"></i></div>
+
+          <!-- Application Layer -->
+          <div class="arch-layer">
+            <span class="arch-layer-tag">Application Layer</span>
+            <div class="arch-boxes">
+              <div class="arch-box arch-box--purple">
+                <i class="fas fa-industry arch-box-icon"></i>
+                <strong class="arch-box-title">MES</strong>
+                <span class="arch-box-sub">Production scheduling, batch traceability and work order lifecycle</span>
+              </div>
+              <div class="arch-box arch-box--purple">
+                <i class="fas fa-wrench arch-box-icon"></i>
+                <strong class="arch-box-title">CMMS</strong>
+                <span class="arch-box-sub">Asset health, maintenance jobs, spare parts inventory and low-stock alerts</span>
+              </div>
+              <div class="arch-box arch-box--purple">
+                <i class="fas fa-calculator arch-box-icon"></i>
+                <strong class="arch-box-title">Analytics Engine</strong>
+                <span class="arch-box-sub">Real-time MTBF, MTTR, OEE calculation and trend aggregation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="arch-connector"><i class="fas fa-chevron-down"></i></div>
+
+          <!-- Data Layer -->
+          <div class="arch-layer">
+            <span class="arch-layer-tag">Data Layer</span>
+            <div class="arch-boxes">
+              <div class="arch-box arch-box--cyan">
+                <i class="fas fa-database arch-box-icon"></i>
+                <strong class="arch-box-title">InfluxDB</strong>
+                <span class="arch-box-sub">Time-series store for sensor readings, production counts and machine states</span>
+              </div>
+              <div class="arch-box arch-box--cyan">
+                <i class="fas fa-table arch-box-icon"></i>
+                <strong class="arch-box-title">Relational Store</strong>
+                <span class="arch-box-sub">Structured records — work orders, assets, batches and inventory</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="arch-connector"><i class="fas fa-chevron-down"></i></div>
+
+          <!-- Simulation Layer -->
+          <div class="arch-layer">
+            <span class="arch-layer-tag">Simulation Layer</span>
+            <div class="arch-boxes">
+              <div class="arch-box arch-box--muted">
+                <i class="fas fa-cogs arch-box-icon"></i>
+                <strong class="arch-box-title">Production Simulator</strong>
+                <span class="arch-box-sub">Drives batch cycles, line throughput and inter-stage timing</span>
+              </div>
+              <div class="arch-box arch-box--muted">
+                <i class="fas fa-broadcast-tower arch-box-icon"></i>
+                <strong class="arch-box-title">Sensor Emulator</strong>
+                <span class="arch-box-sub">Generates realistic blend temperature, pressure and flow readings</span>
+              </div>
+              <div class="arch-box arch-box--muted">
+                <i class="fas fa-sliders-h arch-box-icon"></i>
+                <strong class="arch-box-title">Machine State Manager</strong>
+                <span class="arch-box-sub">Equipment lifecycle transitions — running, idle, fault and maintenance</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <!-- Gallery -->
       <div class="content-section fade-in">
         <h2 class="section-heading">Gallery</h2>
