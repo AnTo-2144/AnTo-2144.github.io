@@ -4,16 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <title>Projects | Antonio Simoes</title>
-
-  <!-- Icons -->
   <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-
-  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-
-  <!-- Portfolio styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
   <link rel="stylesheet" href="assets/css/portfolio.css" />
 </head>
 <body class="projects-page">
@@ -49,53 +43,30 @@
   <!-- PROJECTS GRID -->
   <section id="projects">
     <div class="container">
-
       <div class="showcase-grid">
 
         <!-- Lip Balm Production Line -->
         <a href="projects/lipbalm.html" class="showcase-card fade-in">
-          <div class="showcase-card-image">
-            <img src="images/lip-balm-6.png" alt="Lip Balm Production Line" />
-          </div>
-          <div class="showcase-card-body">
-            <div class="showcase-card-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Grafana</span>
-              <span class="tech-tag">InfluxDB</span>
-            </div>
-            <h2 class="showcase-card-title">Lip Balm Production Line</h2>
-            <p class="showcase-card-subtitle">Industrial Manufacturing Simulation</p>
-            <p class="showcase-card-desc">
-              A simulated factory floor with live production dashboards, machine health monitoring,
-              maintenance work orders and real-time analytics — all containerised with Docker.
-            </p>
-            <div class="showcase-card-footer">
-              <span class="showcase-card-cta">View Project <i class="fas fa-arrow-right"></i></span>
-            </div>
+          <span class="showcase-badge">Latest Project</span>
+          <img class="showcase-card-img" src="images/lip-balm-6.png" alt="Lip Balm Production Line" />
+          <div class="showcase-overlay">
+            <p class="showcase-overlay-tags">Python · Docker · Grafana · InfluxDB</p>
+            <h2 class="showcase-overlay-title">Lip Balm Production Line</h2>
+            <p class="showcase-overlay-desc">A simulated factory floor with live dashboards, machine health monitoring and maintenance work orders — all running in Docker containers.</p>
+            <span class="showcase-overlay-link">View Project <i class="fas fa-arrow-right"></i></span>
           </div>
         </a>
 
         <!-- Maze Game -->
         <a href="projects/dungeonmaze.html" class="showcase-card fade-in delay-1">
-          <div class="showcase-card-image">
-            <img src="images/maze-game-1.png" alt="Maze Game" />
-          </div>
-          <div class="showcase-card-body">
-            <div class="showcase-card-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Pygame</span>
-              <span class="tech-tag">Game Dev</span>
-            </div>
-            <h2 class="showcase-card-title">Maze Game</h2>
-            <p class="showcase-card-subtitle">Top-Down Dungeon Adventure</p>
-            <p class="showcase-card-desc">
-              Navigate a monster-filled dungeon, collect the key and escape alive. 4 enemy types,
-              4 potion effects, pixel-art sprites and real-time combat — built entirely in Python.
-            </p>
-            <div class="showcase-card-footer">
-              <span class="showcase-card-cta">View Project <i class="fas fa-arrow-right"></i></span>
-              <a href="downloads/MazeGame.py" download="MazeGame.py" class="showcase-card-download" onclick="event.stopPropagation()">
+          <img class="showcase-card-img" src="images/maze-game-2.png" alt="Maze Game" />
+          <div class="showcase-overlay">
+            <p class="showcase-overlay-tags">Python · Pygame · Game Development</p>
+            <h2 class="showcase-overlay-title">Maze Game</h2>
+            <p class="showcase-overlay-desc">Navigate a monster-filled dungeon, collect the key and find the exit before your health runs out. 4 enemy types and custom pixel-art sprites.</p>
+            <div class="showcase-overlay-footer">
+              <span class="showcase-overlay-link">View Project <i class="fas fa-arrow-right"></i></span>
+              <a href="downloads/MazeGame.py" download="MazeGame.py" class="showcase-download-btn" onclick="event.stopPropagation()">
                 <i class="fas fa-download"></i> Download
               </a>
             </div>
@@ -104,24 +75,12 @@
 
         <!-- TenniCollect -->
         <a href="projects/tennicollect.html" class="showcase-card fade-in delay-2">
-          <div class="showcase-card-image">
-            <img src="images/TenniCollect-2.png" alt="TenniCollect Robot" />
-          </div>
-          <div class="showcase-card-body">
-            <div class="showcase-card-tags">
-              <span class="tech-tag">CAD</span>
-              <span class="tech-tag">Robotics</span>
-              <span class="tech-tag">Mechatronics</span>
-            </div>
-            <h2 class="showcase-card-title">TenniCollect</h2>
-            <p class="showcase-card-subtitle">Autonomous Tennis Ball Collection Robot</p>
-            <p class="showcase-card-desc">
-              A self-driving robot that collects tennis balls autonomously — 3.66× faster than manual,
-              96.7% detection accuracy. Combines CAD design, sensors and embedded software.
-            </p>
-            <div class="showcase-card-footer">
-              <span class="showcase-card-cta">View Project <i class="fas fa-arrow-right"></i></span>
-            </div>
+          <img class="showcase-card-img" src="images/TenniCollect-2.png" alt="TenniCollect Robot" />
+          <div class="showcase-overlay">
+            <p class="showcase-overlay-tags">CAD · Robotics · Mechatronics · Sensors</p>
+            <h2 class="showcase-overlay-title">TenniCollect</h2>
+            <p class="showcase-overlay-desc">A self-driving robot that collects tennis balls autonomously. 3.66× faster than manual collection with 96.7% detection accuracy.</p>
+            <span class="showcase-overlay-link">View Project <i class="fas fa-arrow-right"></i></span>
           </div>
         </a>
 
