@@ -122,11 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const open = (index) => {
       show(index);
+      lightbox.style.top = window.scrollY + 'px';
       lightbox.classList.add('open');
     };
 
     const close = () => {
       lightbox.classList.remove('open');
+      lightbox.style.top = '';
     };
 
     items.forEach((item, i) => item.addEventListener('click', () => open(i)));
