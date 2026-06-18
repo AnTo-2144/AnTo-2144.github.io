@@ -1132,6 +1132,182 @@ a.project-card:hover {
 
 
 /* ============================================================
+   FEATURED PROJECTS SECTION (index.html)
+   ============================================================ */
+
+#featured {
+  padding: 100px 0;
+  background: var(--color-bg-alt);
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+
+/* ============================================================
+   PROJECTS PAGE — HEADER BANNER
+   ============================================================ */
+
+.projects-page-header {
+  padding: calc(var(--nav-height) + 56px) 0 48px;
+  background: var(--color-bg-dark);
+  text-align: center;
+}
+
+.projects-page-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.projects-page-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.projects-page #projects {
+  padding-top: 72px;
+}
+
+
+/* ============================================================
+   PROJECTS PAGE — SHOWCASE CARD GRID
+   ============================================================ */
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.showcase-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.showcase-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  color: inherit;
+}
+
+.showcase-card-image {
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f0f4ff 100%);
+  flex-shrink: 0;
+}
+
+.showcase-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.showcase-card:hover .showcase-card-image img {
+  transform: scale(1.04);
+}
+
+.showcase-card-body {
+  padding: 1.5rem 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.55rem;
+}
+
+.showcase-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.showcase-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  margin-top: 0.15rem;
+}
+
+.showcase-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-top: -0.2rem;
+}
+
+.showcase-card-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.showcase-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  gap: 0.75rem;
+}
+
+.showcase-card-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: gap var(--transition);
+}
+
+.showcase-card:hover .showcase-card-cta {
+  gap: 0.65rem;
+}
+
+.showcase-card-download {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background var(--transition), color var(--transition);
+  text-decoration: none;
+}
+
+.showcase-card-download:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+
+/* ============================================================
    PROJECT PAGE — STATS ROW
    ============================================================ */
 
@@ -1357,6 +1533,7 @@ kbd {
   .how-to-play-grid   { grid-template-columns: repeat(2, 1fr); }
   .controls-grid      { grid-template-columns: 1fr; }
   .download-section   { flex-direction: column; align-items: flex-start; }
+  .showcase-grid      { grid-template-columns: repeat(2, 1fr); }
 
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1448,5 +1625,7 @@ kbd {
   .how-to-play-grid    { grid-template-columns: 1fr; }
   .controls-grid       { grid-template-columns: 1fr; }
   .download-section    { flex-direction: column; align-items: flex-start; }
+  .showcase-grid       { grid-template-columns: 1fr; }
+  .projects-page-title { font-size: 1.85rem; }
 
 }

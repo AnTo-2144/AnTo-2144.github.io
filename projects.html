@@ -18,139 +18,124 @@
 </head>
 <body class="projects-page">
 
-  <!-- ===================== NAVIGATION ===================== -->
+  <!-- NAVIGATION -->
   <nav id="navbar">
     <div class="nav-container">
-
-      <!-- Logo -->
       <a href="index.html" class="nav-logo">AS</a>
-
-      <!-- Nav links -->
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
-
-      <!-- Social icons -->
       <div class="nav-social">
-        <a href="#" class="nav-icon" title="LinkedIn" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="#" class="nav-icon" title="GitHub" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="mailto:#" class="nav-icon" title="Email" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+        <a href="#" class="nav-icon" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="nav-icon" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:#" class="nav-icon" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
-
-      <!-- Mobile hamburger -->
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
       </button>
-
     </div>
   </nav>
 
-  <!-- ===================== PROJECTS SECTION ===================== -->
+  <!-- PAGE HEADER -->
+  <div class="projects-page-header">
+    <div class="container">
+      <h1 class="projects-page-title">All Projects</h1>
+      <p class="projects-page-subtitle">Engineering, software and game development work</p>
+    </div>
+  </div>
+
+  <!-- PROJECTS GRID -->
   <section id="projects">
     <div class="container">
 
-      <div class="section-header fade-in">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">Detailed overview of my engineering projects</p>
-      </div>
+      <div class="showcase-grid">
 
-      <!-- Project 1: Lip Balm Production Line -->
-      <div class="project-block fade-in">
-        <div class="project-detail-card">
-          <div class="project-detail-image has-image">
+        <!-- Lip Balm Production Line -->
+        <a href="projects/lipbalm.html" class="showcase-card fade-in">
+          <div class="showcase-card-image">
             <img src="images/lip-balm-6.png" alt="Lip Balm Production Line" />
           </div>
-          <div class="project-detail-content">
-            <h3 class="project-detail-title">Lip Balm Production Line</h3>
-            <div class="tech-tags">
+          <div class="showcase-card-body">
+            <div class="showcase-card-tags">
               <span class="tech-tag">Python</span>
               <span class="tech-tag">Docker</span>
               <span class="tech-tag">Grafana</span>
               <span class="tech-tag">InfluxDB</span>
             </div>
-            <p class="project-detail-desc">
-              A simulated factory floor for a lip balm brand — built entirely in software. It tracks
-              production schedules, machine health, maintenance work orders and live output graphs,
-              just like a real industrial facility would. All running in Docker containers on one machine.
+            <h2 class="showcase-card-title">Lip Balm Production Line</h2>
+            <p class="showcase-card-subtitle">Industrial Manufacturing Simulation</p>
+            <p class="showcase-card-desc">
+              A simulated factory floor with live production dashboards, machine health monitoring,
+              maintenance work orders and real-time analytics — all containerised with Docker.
             </p>
-            <div class="card-actions">
-              <a href="projects/lipbalm.html" class="btn btn-outline">View Details</a>
-              <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> GitHub &mdash; Coming Soon</a>
+            <div class="showcase-card-footer">
+              <span class="showcase-card-cta">View Project <i class="fas fa-arrow-right"></i></span>
             </div>
           </div>
-        </div>
-      </div>
+        </a>
 
-      <!-- Project 2: Maze Game -->
-      <div class="project-detail-card fade-in">
-        <div class="project-detail-image">
-          <i class="fas fa-dungeon"></i>
-        </div>
-        <div class="project-detail-content">
-          <h3 class="project-detail-title">Maze Game</h3>
-          <div class="tech-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Pygame</span>
-            <span class="tech-tag">Game Development</span>
+        <!-- Maze Game -->
+        <a href="projects/dungeonmaze.html" class="showcase-card fade-in delay-1">
+          <div class="showcase-card-image">
+            <img src="images/maze-game-1.png" alt="Maze Game" />
           </div>
-          <p class="project-detail-desc">
-            A fully playable top-down dungeon game built in Python. Navigate a monster-filled maze,
-            collect the key, fight enemies for points and find the exit before your health runs out.
-            Features 4 enemy types, 4 potion effects, custom pixel-art sprites and real sword audio.
-          </p>
-          <div class="card-actions">
-            <a href="projects/dungeonmaze.html" class="btn btn-outline">View Details</a>
-            <a href="downloads/MazeGame.py" download="MazeGame.py" class="btn btn-primary"><i class="fas fa-download"></i> Download Game</a>
+          <div class="showcase-card-body">
+            <div class="showcase-card-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pygame</span>
+              <span class="tech-tag">Game Dev</span>
+            </div>
+            <h2 class="showcase-card-title">Maze Game</h2>
+            <p class="showcase-card-subtitle">Top-Down Dungeon Adventure</p>
+            <p class="showcase-card-desc">
+              Navigate a monster-filled dungeon, collect the key and escape alive. 4 enemy types,
+              4 potion effects, pixel-art sprites and real-time combat — built entirely in Python.
+            </p>
+            <div class="showcase-card-footer">
+              <span class="showcase-card-cta">View Project <i class="fas fa-arrow-right"></i></span>
+              <a href="downloads/MazeGame.py" download="MazeGame.py" class="showcase-card-download" onclick="event.stopPropagation()">
+                <i class="fas fa-download"></i> Download
+              </a>
+            </div>
           </div>
-        </div>
-      </div>
+        </a>
 
-      <!-- Project 3: TenniCollect -->
-      <div class="project-detail-card fade-in">
-        <div class="project-detail-image has-image">
-          <img src="images/TenniCollect-2.png" alt="TenniCollect autonomous tennis ball robot" />
-        </div>
-        <div class="project-detail-content">
-          <h3 class="project-detail-title">TenniCollect</h3>
-          <p class="project-detail-subtitle">Autonomous Tennis Ball Collection Robot</p>
-          <div class="tech-tags">
-            <span class="tech-tag">CAD</span>
-            <span class="tech-tag">Robotics</span>
-            <span class="tech-tag">Mechatronics</span>
-            <span class="tech-tag">Sensors</span>
+        <!-- TenniCollect -->
+        <a href="projects/tennicollect.html" class="showcase-card fade-in delay-2">
+          <div class="showcase-card-image">
+            <img src="images/TenniCollect-2.png" alt="TenniCollect Robot" />
           </div>
-          <p class="project-detail-desc">
-            A self-driving robot that finds and collects tennis balls on a court — entirely on its own.
-            3.66× faster than manual collection, 96.7% ball detection accuracy and 108 minutes of
-            battery life. Combines CAD-designed mechanics, sensors and embedded control software.
-          </p>
-          <div class="card-actions">
-            <a href="projects/tennicollect.html" class="btn btn-outline">View Details</a>
-            <a href="#" class="btn btn-primary"><i class="fab fa-github"></i> GitHub &mdash; Coming Soon</a>
+          <div class="showcase-card-body">
+            <div class="showcase-card-tags">
+              <span class="tech-tag">CAD</span>
+              <span class="tech-tag">Robotics</span>
+              <span class="tech-tag">Mechatronics</span>
+            </div>
+            <h2 class="showcase-card-title">TenniCollect</h2>
+            <p class="showcase-card-subtitle">Autonomous Tennis Ball Collection Robot</p>
+            <p class="showcase-card-desc">
+              A self-driving robot that collects tennis balls autonomously — 3.66× faster than manual,
+              96.7% detection accuracy. Combines CAD design, sensors and embedded software.
+            </p>
+            <div class="showcase-card-footer">
+              <span class="showcase-card-cta">View Project <i class="fas fa-arrow-right"></i></span>
+            </div>
           </div>
-        </div>
-      </div>
+        </a>
 
+      </div>
     </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER -->
   <footer id="footer">
     <div class="footer-container">
       <p>&copy; 2026 Antonio Simoes. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Portfolio JS -->
   <script src="assets/js/portfolio.js"></script>
-
 </body>
 </html>
