@@ -1,14 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
-  <defs>
-    <filter id="gc" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="gp" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
 
   <rect width="800" height="800" fill="#121214"/>
 
@@ -58,13 +48,7 @@
     <path d="M 0,700 C 40,700 70,720 100,715 S 150,695 180,710"/>
   </g>
 
-  <!-- ── CYAN ACCENT TRACES (#06B6D4) with glow ── -->
-  <!-- Full-width cyan backbone (seamless) -->
-  <g stroke="#06B6D4" stroke-width="5" fill="none" stroke-opacity="0.10" filter="url(#gc)"
-     stroke-linecap="round" stroke-linejoin="round">
-    <path d="M 0,380 C 100,380 150,355 240,365 S 380,390 470,375 S 600,350 700,368 L 800,380"/>
-    <path d="M 200,0 C 200,80 175,130 185,200 S 210,300 198,380 S 172,480 188,560 S 210,660 200,800"/>
-  </g>
+  <!-- ── CYAN ACCENT TRACES (#06B6D4) ── -->
   <g stroke="#06B6D4" stroke-width="1.6" fill="none" stroke-opacity="0.75"
      stroke-linecap="round" stroke-linejoin="round">
     <path d="M 0,380 C 100,380 150,355 240,365 S 380,390 470,375 S 600,350 700,368 L 800,380"/>
@@ -77,13 +61,7 @@
     <path d="M 185,200 Q 150,200 130,175 S 115,140 120,110"/>
   </g>
 
-  <!-- ── PURPLE ACCENT TRACES (#A855F7) with glow ── -->
-  <!-- Full-height purple backbone (seamless) -->
-  <g stroke="#A855F7" stroke-width="5" fill="none" stroke-opacity="0.10" filter="url(#gp)"
-     stroke-linecap="round" stroke-linejoin="round">
-    <path d="M 0,500 C 80,500 130,480 210,490 S 340,515 440,500 S 570,475 660,490 L 800,500"/>
-    <path d="M 590,0 C 590,90 615,135 605,210 S 580,310 595,390 S 620,490 608,565 S 580,665 590,800"/>
-  </g>
+  <!-- ── PURPLE ACCENT TRACES (#A855F7) ── -->
   <g stroke="#A855F7" stroke-width="1.6" fill="none" stroke-opacity="0.70"
      stroke-linecap="round" stroke-linejoin="round">
     <path d="M 0,500 C 80,500 130,480 210,490 S 340,515 440,500 S 570,475 660,490 L 800,500"/>
