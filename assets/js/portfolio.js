@@ -126,13 +126,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const open = (index) => {
       show(index);
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top      = `-${scrollY}px`;
+      document.body.style.width    = '100%';
       lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
     };
 
     const close = () => {
+      const scrollY = parseInt(document.body.style.top || '0') * -1;
+      document.body.style.position = '';
+      document.body.style.top      = '';
+      document.body.style.width    = '';
+      window.scrollTo(0, scrollY);
       lightbox.classList.remove('open');
-      document.body.style.overflow = '';
     };
 
     items.forEach((item, i) => item.addEventListener('click', () => open(i)));
