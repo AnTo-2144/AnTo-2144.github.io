@@ -769,8 +769,10 @@ a.project-card:hover {
 
 /* Hero with full-bleed background image */
 .project-hero.hero-bg {
-  background-size: cover;
-  background-position: center 65%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #d4a5aa;
   position: relative;
   border-bottom: none;
 }
