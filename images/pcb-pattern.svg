@@ -1,199 +1,129 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <filter id="gc" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gp" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
 
-  <!-- Background -->
-  <rect width="600" height="600" fill="#8c8c8c"/>
+  <rect width="800" height="800" fill="#121214"/>
 
-  <!-- === MAIN THROUGH-TRACES — span full tile for seamless tiling === -->
-
-  <!-- Horizontal main traces (y = 150, 300, 450) -->
-  <g stroke="white" stroke-opacity="0.42" stroke-width="1.8" fill="none" stroke-linecap="square">
-    <line x1="0"   y1="150" x2="600" y2="150"/>
-    <line x1="0"   y1="300" x2="600" y2="300"/>
-    <line x1="0"   y1="450" x2="600" y2="450"/>
+  <!-- ── DARK BLUE BASE TRACES (subtle skeleton) ── -->
+  <!-- Full-width horizontal backbones — same y at both edges = seamless vertical tiling -->
+  <g stroke="#1E293B" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 0,250 C 90,250 130,225 210,232 S 330,258 420,245 S 530,220 620,238 S 710,255 800,250"/>
+    <path d="M 0,580 C 80,580 110,560 200,568 S 310,590 400,578 S 510,555 600,570 S 700,590 800,580"/>
   </g>
 
-  <!-- Vertical main traces (x = 150, 300, 450) -->
-  <g stroke="white" stroke-opacity="0.42" stroke-width="1.8" fill="none" stroke-linecap="square">
-    <line x1="150" y1="0"   x2="150" y2="600"/>
-    <line x1="300" y1="0"   x2="300" y2="600"/>
-    <line x1="450" y1="0"   x2="450" y2="600"/>
+  <!-- Full-height vertical backbone — same x at both edges = seamless horizontal tiling -->
+  <g stroke="#1E293B" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 350,0 C 350,90 330,130 338,210 S 360,320 348,400 S 325,510 342,590 S 360,700 350,800"/>
   </g>
 
-  <!-- === 45° DIAGONAL TRACES — also seamlessly tile in a square tile === -->
+  <!-- Branch traces — organic, internal, non-repeating -->
+  <g stroke="#253347" fill="none" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Off top-left backbone -->
+    <path d="M 210,232 Q 210,170 260,140 T 320,90"/>
+    <path d="M 420,245 Q 460,245 490,210 S 540,175 590,185"/>
+    <path d="M 620,238 Q 660,238 690,205 S 720,160 760,150"/>
+    <path d="M 90,250 Q 70,210 50,190 S 20,165 0,155"/>
+    <path d="M 330,258 Q 330,300 310,330 S 280,360 300,400"/>
+    <path d="M 710,255 Q 740,255 770,280 S 800,300 800,320"/>
 
-  <!-- NE direction: y = -x + c -->
-  <g stroke="white" stroke-opacity="0.24" stroke-width="1.1" fill="none" stroke-linecap="round">
-    <line x1="0"   y1="300" x2="300" y2="0"/>
-    <line x1="0"   y1="600" x2="600" y2="0"/>
-    <line x1="300" y1="600" x2="600" y2="300"/>
+    <!-- Off bottom backbone -->
+    <path d="M 200,568 Q 165,568 140,540 S 120,500 90,490"/>
+    <path d="M 400,578 Q 400,630 430,660 S 470,690 460,740"/>
+    <path d="M 600,570 Q 640,570 670,600 S 690,640 720,650"/>
+    <path d="M 80,580 Q 50,580 20,600 S 0,620 0,640"/>
+    <path d="M 700,590 Q 730,590 760,570 S 790,550 800,540"/>
+    <path d="M 310,590 Q 310,640 280,670 S 240,690 220,730"/>
+
+    <!-- Off vertical backbone -->
+    <path d="M 338,210 Q 290,210 265,185 S 250,150 220,140"/>
+    <path d="M 348,400 Q 400,400 430,430 S 450,470 440,510"/>
+    <path d="M 342,590 Q 295,590 270,620 S 265,660 240,680"/>
+    <path d="M 350,90 Q 400,90 430,65 S 460,30 500,20"/>
+    <path d="M 350,710 Q 310,710 290,740 S 280,780 260,800"/>
+
+    <!-- Floating abstract traces -->
+    <path d="M 0,400 C 60,380 100,410 160,400 S 230,375 280,390"/>
+    <path d="M 520,800 C 520,740 550,710 570,660 S 580,600 600,570"/>
+    <path d="M 800,450 C 750,450 720,470 690,460 S 650,430 620,440"/>
+    <path d="M 130,0 C 130,60 110,100 120,150 S 150,200 140,250"/>
+    <path d="M 680,780 C 700,740 720,710 740,680 S 760,640 800,630"/>
+    <path d="M 0,700 C 40,700 70,720 100,715 S 150,695 180,710"/>
   </g>
 
-  <!-- SE direction: y = x + b -->
-  <g stroke="white" stroke-opacity="0.24" stroke-width="1.1" fill="none" stroke-linecap="round">
-    <line x1="300" y1="0"   x2="600" y2="300"/>
-    <line x1="0"   y1="0"   x2="600" y2="600"/>
-    <line x1="0"   y1="300" x2="300" y2="600"/>
+  <!-- ── CYAN ACCENT TRACES (#06B6D4) with glow ── -->
+  <!-- Full-width cyan backbone (seamless) -->
+  <g stroke="#06B6D4" stroke-width="5" fill="none" stroke-opacity="0.10" filter="url(#gc)"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 0,380 C 100,380 150,355 240,365 S 380,390 470,375 S 600,350 700,368 L 800,380"/>
+    <path d="M 200,0 C 200,80 175,130 185,200 S 210,300 198,380 S 172,480 188,560 S 210,660 200,800"/>
+  </g>
+  <g stroke="#06B6D4" stroke-width="1.6" fill="none" stroke-opacity="0.75"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 0,380 C 100,380 150,355 240,365 S 380,390 470,375 S 600,350 700,368 L 800,380"/>
+    <path d="M 200,0 C 200,80 175,130 185,200 S 210,300 198,380 S 172,480 188,560 S 210,660 200,800"/>
+    <!-- Cyan branches -->
+    <path d="M 240,365 Q 240,310 275,285 S 330,270 350,245"/>
+    <path d="M 470,375 Q 510,375 540,345 S 570,305 610,295"/>
+    <path d="M 198,380 Q 245,380 270,410 S 275,450 265,490"/>
+    <path d="M 188,560 Q 145,560 120,590 S 110,630 90,650"/>
+    <path d="M 185,200 Q 150,200 130,175 S 115,140 120,110"/>
   </g>
 
-  <!-- === L-SHAPED BRANCH TRACES — internal PCB routing detail === -->
-  <g stroke="white" stroke-opacity="0.32" stroke-width="1.2" fill="none"
-     stroke-linecap="square" stroke-linejoin="miter">
-
-    <!-- Stubs rising from y=150 -->
-    <polyline points="75,150  75,95"/>
-    <polyline points="225,150 225,95  265,55"/>
-    <polyline points="375,150 375,95"/>
-    <polyline points="525,150 525,95  565,55"/>
-
-    <!-- Stubs dropping from y=150 toward y=300 -->
-    <polyline points="75,205  120,205  150,235  150,300"/>
-    <polyline points="375,205 420,205  450,235  450,300"/>
-    <polyline points="525,200 560,200  560,250"/>
-
-    <!-- Stubs on y=300 -->
-    <polyline points="55,300  55,250   75,230"/>
-    <polyline points="225,260 260,260  300,230 300,150"/>
-
-    <!-- Stubs from y=300 down toward y=450 -->
-    <polyline points="75,355  120,355  150,385  150,450"/>
-    <polyline points="225,355 265,355  300,385  300,450"/>
-    <polyline points="525,355 565,355  565,385"/>
-
-    <!-- Stubs rising from y=450 -->
-    <polyline points="75,450  75,505"/>
-    <polyline points="225,450 225,505  265,540"/>
-    <polyline points="375,450 375,505"/>
-    <polyline points="525,450 525,505  565,540"/>
-
-    <!-- Horizontal connectors bridging main columns (top half) -->
-    <polyline points="150,75  200,75   225,100  225,150"/>
-    <polyline points="300,75  350,75   375,100  375,150"/>
-    <polyline points="450,75  500,75   525,100  525,150"/>
-
-    <!-- Horizontal connectors (middle band) -->
-    <polyline points="150,225 195,225  225,195  225,150"/>
-    <polyline points="300,225 345,225  375,255  375,300"/>
-    <polyline points="450,225 495,225  525,255  525,300"/>
-    <polyline points="150,375 190,375  225,345  225,300"/>
-    <polyline points="300,375 340,375  375,345  375,300"/>
-    <polyline points="450,375 490,375  525,345  525,300"/>
-
-    <!-- Horizontal connectors (lower band) -->
-    <polyline points="150,525 200,525  225,500  225,450"/>
-    <polyline points="300,525 345,525  375,500  375,450"/>
-    <polyline points="450,525 495,525  525,500  525,450"/>
+  <!-- ── PURPLE ACCENT TRACES (#A855F7) with glow ── -->
+  <!-- Full-height purple backbone (seamless) -->
+  <g stroke="#A855F7" stroke-width="5" fill="none" stroke-opacity="0.10" filter="url(#gp)"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 0,500 C 80,500 130,480 210,490 S 340,515 440,500 S 570,475 660,490 L 800,500"/>
+    <path d="M 590,0 C 590,90 615,135 605,210 S 580,310 595,390 S 620,490 608,565 S 580,665 590,800"/>
+  </g>
+  <g stroke="#A855F7" stroke-width="1.6" fill="none" stroke-opacity="0.70"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 0,500 C 80,500 130,480 210,490 S 340,515 440,500 S 570,475 660,490 L 800,500"/>
+    <path d="M 590,0 C 590,90 615,135 605,210 S 580,310 595,390 S 620,490 608,565 S 580,665 590,800"/>
+    <!-- Purple branches -->
+    <path d="M 210,490 Q 185,490 165,515 S 155,555 140,570"/>
+    <path d="M 440,500 Q 440,555 420,580 S 395,610 400,650"/>
+    <path d="M 605,210 Q 655,210 680,185 S 700,150 740,140"/>
+    <path d="M 595,390 Q 550,390 525,410 S 510,445 490,460"/>
+    <path d="M 608,565 Q 650,565 675,595 S 685,635 710,650"/>
   </g>
 
-  <!-- === JUNCTION DOTS — at every trace intersection and branch endpoint === -->
-  <g fill="white" fill-opacity="0.48">
-
-    <!-- 3 × 3 main grid nodes -->
-    <circle cx="150" cy="150" r="3.5"/>
-    <circle cx="300" cy="150" r="3.5"/>
-    <circle cx="450" cy="150" r="3.5"/>
-    <circle cx="150" cy="300" r="3.5"/>
-    <circle cx="300" cy="300" r="3.5"/>
-    <circle cx="450" cy="300" r="3.5"/>
-    <circle cx="150" cy="450" r="3.5"/>
-    <circle cx="300" cy="450" r="3.5"/>
-    <circle cx="450" cy="450" r="3.5"/>
-
-    <!-- Half-step nodes along main horizontal traces -->
-    <circle cx="75"  cy="150" r="2.5"/>
-    <circle cx="225" cy="150" r="2.5"/>
-    <circle cx="375" cy="150" r="2.5"/>
-    <circle cx="525" cy="150" r="2.5"/>
-    <circle cx="75"  cy="300" r="2.5"/>
-    <circle cx="225" cy="300" r="2.5"/>
-    <circle cx="375" cy="300" r="2.5"/>
-    <circle cx="525" cy="300" r="2.5"/>
-    <circle cx="75"  cy="450" r="2.5"/>
-    <circle cx="225" cy="450" r="2.5"/>
-    <circle cx="375" cy="450" r="2.5"/>
-    <circle cx="525" cy="450" r="2.5"/>
-
-    <!-- Half-step nodes along main vertical traces -->
-    <circle cx="150" cy="75"  r="2.5"/>
-    <circle cx="300" cy="75"  r="2.5"/>
-    <circle cx="450" cy="75"  r="2.5"/>
-    <circle cx="150" cy="225" r="2.5"/>
-    <circle cx="300" cy="225" r="2.5"/>
-    <circle cx="450" cy="225" r="2.5"/>
-    <circle cx="150" cy="375" r="2.5"/>
-    <circle cx="300" cy="375" r="2.5"/>
-    <circle cx="450" cy="375" r="2.5"/>
-    <circle cx="150" cy="525" r="2.5"/>
-    <circle cx="300" cy="525" r="2.5"/>
-    <circle cx="450" cy="525" r="2.5"/>
-
-    <!-- Branch endpoint dots (small) -->
-    <circle cx="75"  cy="95"  r="2.0"/>
-    <circle cx="375" cy="95"  r="2.0"/>
-    <circle cx="265" cy="55"  r="2.0"/>
-    <circle cx="565" cy="55"  r="2.0"/>
-    <circle cx="120" cy="205" r="2.0"/>
-    <circle cx="420" cy="205" r="2.0"/>
-    <circle cx="560" cy="250" r="2.0"/>
-    <circle cx="55"  cy="250" r="2.0"/>
-    <circle cx="260" cy="260" r="2.0"/>
-    <circle cx="120" cy="355" r="2.0"/>
-    <circle cx="265" cy="355" r="2.0"/>
-    <circle cx="565" cy="385" r="2.0"/>
-    <circle cx="75"  cy="505" r="2.0"/>
-    <circle cx="375" cy="505" r="2.0"/>
-    <circle cx="265" cy="540" r="2.0"/>
-    <circle cx="565" cy="540" r="2.0"/>
-    <circle cx="200" cy="75"  r="2.0"/>
-    <circle cx="350" cy="75"  r="2.0"/>
-    <circle cx="500" cy="75"  r="2.0"/>
-    <circle cx="195" cy="225" r="2.0"/>
-    <circle cx="345" cy="225" r="2.0"/>
-    <circle cx="495" cy="225" r="2.0"/>
-    <circle cx="190" cy="375" r="2.0"/>
-    <circle cx="340" cy="375" r="2.0"/>
-    <circle cx="490" cy="375" r="2.0"/>
-    <circle cx="200" cy="525" r="2.0"/>
-    <circle cx="345" cy="525" r="2.0"/>
-    <circle cx="495" cy="525" r="2.0"/>
+  <!-- ── JUNCTION DOTS ── -->
+  <!-- Dark structural nodes -->
+  <g fill="#2D4263" stroke="none">
+    <circle cx="210" cy="232" r="3"/>  <circle cx="420" cy="245" r="3"/>
+    <circle cx="620" cy="238" r="3"/>  <circle cx="330" cy="258" r="3"/>
+    <circle cx="200" cy="568" r="3"/>  <circle cx="400" cy="578" r="3"/>
+    <circle cx="600" cy="570" r="3"/>  <circle cx="310" cy="590" r="3"/>
+    <circle cx="338" cy="210" r="3"/>  <circle cx="348" cy="400" r="3"/>
+    <circle cx="342" cy="590" r="3"/>  <circle cx="280" cy="390" r="3"/>
+    <circle cx="690" cy="460" r="3"/>  <circle cx="160" cy="400" r="3"/>
   </g>
 
-  <!-- === COMPONENT PADS — IC chips and SMD resistors === -->
-  <g fill="rgba(255,255,255,0.20)" stroke="white" stroke-opacity="0.38" stroke-width="0.9">
+  <!-- Cyan glowing nodes -->
+  <g fill="#06B6D4" stroke="none">
+    <circle cx="240" cy="365" r="4.5"/>  <circle cx="470" cy="375" r="4.5"/>
+    <circle cx="198" cy="380" r="4.5"/>  <circle cx="188" cy="560" r="4"/>
+    <circle cx="275" cy="285" r="3"/>    <circle cx="540" cy="345" r="3"/>
+    <circle cx="265" cy="490" r="3"/>    <circle cx="90"  cy="650" r="3"/>
+    <circle cx="130" cy="175" r="2.5"/>  <circle cx="610" cy="295" r="2.5"/>
+  </g>
 
-    <!-- IC body pads at three main intersections -->
-    <rect x="141" y="141" width="18" height="18" rx="2.5"/>
-    <rect x="291" y="291" width="18" height="18" rx="2.5"/>
-    <rect x="441" y="441" width="18" height="18" rx="2.5"/>
-
-    <!-- IC pin pads — four sides of each chip body -->
-    <!-- Pins for chip at (150,150) -->
-    <rect x="131" y="146" width="8" height="5" rx="1"/>
-    <rect x="161" y="146" width="8" height="5" rx="1"/>
-    <rect x="146" y="131" width="5" height="8" rx="1"/>
-    <rect x="146" y="161" width="5" height="8" rx="1"/>
-
-    <!-- Pins for chip at (300,300) -->
-    <rect x="281" y="296" width="8" height="5" rx="1"/>
-    <rect x="311" y="296" width="8" height="5" rx="1"/>
-    <rect x="296" y="281" width="5" height="8" rx="1"/>
-    <rect x="296" y="311" width="5" height="8" rx="1"/>
-
-    <!-- Pins for chip at (450,450) -->
-    <rect x="431" y="446" width="8" height="5" rx="1"/>
-    <rect x="461" y="446" width="8" height="5" rx="1"/>
-    <rect x="446" y="431" width="5" height="8" rx="1"/>
-    <rect x="446" y="461" width="5" height="8" rx="1"/>
-
-    <!-- SMD resistor pads at secondary nodes -->
-    <rect x="70"  y="70"  width="10" height="6" rx="1.5"/>
-    <rect x="220" y="220"              width="10" height="6" rx="1.5"/>
-    <rect x="370" y="370"              width="10" height="6" rx="1.5"/>
-    <rect x="520" y="520"              width="10" height="6" rx="1.5"/>
-    <rect x="220" y="70"               width="10" height="6" rx="1.5"/>
-    <rect x="70"  y="370"              width="6"  height="10" rx="1.5"/>
-    <rect x="520" y="220"              width="6"  height="10" rx="1.5"/>
-    <rect x="70"  y="520"              width="10" height="6" rx="1.5"/>
-    <rect x="370" y="70"               width="10" height="6" rx="1.5"/>
+  <!-- Purple glowing nodes -->
+  <g fill="#A855F7" stroke="none">
+    <circle cx="210" cy="490" r="4.5"/>  <circle cx="440" cy="500" r="4.5"/>
+    <circle cx="605" cy="210" r="4"/>    <circle cx="595" cy="390" r="4"/>
+    <circle cx="165" cy="515" r="3"/>    <circle cx="420" cy="580" r="3"/>
+    <circle cx="680" cy="185" r="3"/>    <circle cx="710" cy="650" r="3"/>
+    <circle cx="490" cy="460" r="2.5"/>  <circle cx="140" cy="570" r="2.5"/>
   </g>
 
 </svg>
