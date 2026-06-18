@@ -708,13 +708,16 @@ body {
 /* body fade-out is applied via inline styles in portfolio.js */
 
 /* Card links — reset <a> defaults when the whole card is a link */
-a.project-card {
+a.project-card,
+a.contact-card {
   display: flex;
   cursor: pointer;
   color: inherit;
+  text-decoration: none;
 }
 
-a.project-card:hover {
+a.project-card:hover,
+a.contact-card:hover {
   color: inherit;
 }
 
