@@ -1355,6 +1355,56 @@ a.project-card:hover {
 
 
 /* ============================================================
+   SHOWCASE CARD — OVERLAY REVEAL VARIANT
+   Hover: full-card transparent dark film + white text slides up
+   ============================================================ */
+
+/* Image: full brightness, no dimming by default */
+.overlay-reveal .showcase-card-img {
+  opacity: 1;
+  transition: transform 0.5s ease;
+}
+
+.overlay-reveal:hover .showcase-card-img {
+  transform: scale(1.04);
+}
+
+/* Overlay: covers entire card, transparent by default → dark film on hover */
+.overlay-reveal .showcase-overlay {
+  top: 0;
+  background: transparent;
+  transition: background 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.overlay-reveal:hover .showcase-overlay {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Content wrapper: hidden + shifted down by default, slides up on hover */
+.overlay-reveal .showcase-overlay-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.38s ease 0.06s, transform 0.38s ease 0.06s;
+}
+
+.overlay-reveal:hover .showcase-overlay-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Desc: always visible inside the wrapper (wrapper controls visibility) */
+.overlay-reveal .showcase-overlay-desc {
+  max-height: 200px;
+  opacity: 1;
+  transform: none;
+  margin-top: 0.5rem;
+}
+
+
+/* ============================================================
    PROJECT PAGE — STATS ROW
    ============================================================ */
 
