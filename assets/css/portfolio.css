@@ -767,42 +767,6 @@ a.project-card:hover {
   margin-top: 1rem;
 }
 
-/* Hero with full-bleed background image */
-.project-hero.hero-bg {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #d4a5aa;
-  position: relative;
-  border-bottom: none;
-}
-.project-hero.hero-bg::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.7) 100%);
-}
-.project-hero.hero-bg .container {
-  position: relative;
-  z-index: 1;
-}
-.project-hero.hero-bg .back-link {
-  color: rgba(255,255,255,0.8);
-}
-.project-hero.hero-bg .back-link:hover {
-  color: #fff;
-}
-.project-hero.hero-bg .project-hero-title {
-  color: #fff;
-}
-.project-hero.hero-bg .project-hero-intro {
-  color: rgba(255,255,255,0.8);
-}
-.project-hero.hero-bg .tech-tag {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  border-color: rgba(255,255,255,0.3);
-}
 
 
 /* ============================================================
