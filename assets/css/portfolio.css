@@ -1175,24 +1175,24 @@ a.project-card:hover {
 
 
 /* ============================================================
-   PROJECTS PAGE — SHOWCASE CARD GRID (overlay design)
+   PROJECTS PAGE — SHOWCASE CARD GRID
    ============================================================ */
 
 .showcase-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  align-items: start;
 }
 
+/* Card shell */
 .showcase-card {
   position: relative;
   display: block;
+  height: 520px;
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background: #111827;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  cursor: pointer;
-  height: 520px;
+  background: #0f172a;
   text-decoration: none;
   color: inherit;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -1200,143 +1200,164 @@ a.project-card:hover {
 
 .showcase-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 32px 72px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.45);
   color: inherit;
 }
 
-/* "Latest Project" pill badge */
+/* Badge (e.g. "Latest Project") */
 .showcase-badge {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 1.1rem;
+  left: 1.1rem;
   z-index: 3;
   background: #e11d48;
-  color: #ffffff;
-  font-size: 0.68rem;
+  color: #fff;
+  font-size: 0.66rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  padding: 0.35rem 0.9rem;
+  padding: 0.3rem 0.85rem;
   border-radius: 100px;
   pointer-events: none;
 }
 
-/* Full-bleed image — fills card via normal flow, no absolute needed */
-.showcase-card-img {
+/* Image fills the fixed-height card */
+.sc-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
-  opacity: 0.65;
-  transition: opacity 0.45s ease, transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
-.showcase-card:hover .showcase-card-img {
-  opacity: 1;
-  transform: scale(1.05);
+.showcase-card:hover .sc-img {
+  transform: scale(1.04);
 }
 
-/* Gradient overlay — covers full card, gradient fades from bottom up */
-.showcase-overlay {
+/* Dark overlay — bottom gradient by default, full film on hover */
+.sc-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2;
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.3) 45%,
-    transparent 70%
-  );
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 48%);
+  pointer-events: none;
+  transition: background 0.4s ease;
+}
+
+.showcase-card:hover .sc-overlay {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.sc-overlay > * { pointer-events: auto; }
+
+/* Always-visible project name */
+.sc-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.showcase-card:hover .sc-name {
+  opacity: 0;
+  transform: translateY(8px);
   pointer-events: none;
 }
 
-.showcase-overlay > * { pointer-events: auto; }
+/* Hover-only details block */
+.sc-details {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  right: 1.75rem;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s;
+  pointer-events: none;
+}
 
-.showcase-overlay-tags {
+.showcase-card:hover .sc-details {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sc-tags {
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 0.45rem;
+  letter-spacing: 0.09em;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.4rem;
 }
 
-.showcase-overlay-title {
-  font-size: 1.3rem;
+.sc-title {
+  font-size: 1.25rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #fff;
   letter-spacing: -0.02em;
   line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
-/* Description — hidden by default, slides in on hover */
-.showcase-overlay-desc {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.6;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: max-height 0.4s ease, opacity 0.35s ease, transform 0.35s ease, margin 0.35s ease;
-  margin-top: 0;
+.sc-desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.65;
 }
 
-.showcase-card:hover .showcase-overlay-desc {
-  max-height: 100px;
-  opacity: 1;
-  transform: translateY(0);
-  margin-top: 0.5rem;
-}
-
-/* Divider + view link */
-.showcase-overlay-link {
+.sc-link {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255,255,255,0.75);
   margin-top: 0.85rem;
   padding-top: 0.85rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  transition: color 0.25s ease, gap 0.25s ease;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  transition: color 0.2s ease, gap 0.2s ease;
 }
 
-.showcase-card:hover .showcase-overlay-link {
-  color: #ffffff;
+.showcase-card:hover .sc-link {
+  color: #fff;
   gap: 0.65rem;
 }
 
-/* Footer row (view link + download btn side by side) */
-.showcase-overlay-footer {
+/* Footer with link + optional download side by side */
+.sc-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
   margin-top: 0.85rem;
   padding-top: 0.85rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 
-.showcase-overlay-footer .showcase-overlay-link {
+.sc-footer .sc-link {
   margin-top: 0;
   padding-top: 0;
   border-top: none;
+  flex: 1;
 }
 
-/* Download pill inside the card */
-.showcase-download-btn {
+.sc-download {
   font-size: 0.73rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: var(--radius-sm);
   padding: 0.3rem 0.7rem;
   display: inline-flex;
@@ -1347,72 +1368,12 @@ a.project-card:hover {
   white-space: nowrap;
 }
 
-.showcase-download-btn:hover {
-  background: rgba(255, 255, 255, 0.22);
-  color: #ffffff;
+.sc-download:hover {
+  background: rgba(255,255,255,0.22);
+  color: #fff;
 }
 
-
-/* ============================================================
-   SHOWCASE CARD — OVERLAY REVEAL VARIANT
-   Default: clean image + title only at bottom
-   Hover:   semi-transparent dark film + full text slides up
-   ============================================================ */
-
-.overlay-reveal .showcase-card-img {
-  opacity: 1;
-  transition: transform 0.5s ease;
-}
-
-.overlay-reveal:hover .showcase-card-img {
-  transform: scale(1.04);
-}
-
-/* Bottom gradient by default, full semi-transparent film on hover */
-.overlay-reveal .showcase-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0) 42%);
-  transition: background 0.4s ease;
-}
-
-.overlay-reveal:hover .showcase-overlay {
-  background: rgba(0, 0, 0, 0.58);
-}
-
-/* Always-visible project name — fades out when hover content appears */
-.showcase-always-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.overlay-reveal:hover .showcase-always-title {
-  opacity: 0;
-  transform: translateY(8px);
-  pointer-events: none;
-}
-
-/* Hover-only content block — absolutely positioned so it never affects layout */
-.overlay-reveal .showcase-overlay-content {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  right: 2rem;
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.38s ease 0.06s, transform 0.38s ease 0.06s;
-  pointer-events: none;
-}
-
-.overlay-reveal:hover .showcase-overlay-content {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* Desc: visible inside wrapper — wrapper controls overall visibility */
+/* Legacy aliases kept for the overlay-reveal .showcase-overlay-desc rule below */
 .overlay-reveal .showcase-overlay-desc {
   max-height: 100px;
   opacity: 1;
