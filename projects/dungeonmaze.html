@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <title>DungeonMaze | Antonio Simoes</title>
+  <title>Maze Game | Antonio Simoes</title>
   <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,15 +44,16 @@
       <a href="../projects.html" class="back-link">
         <i class="fas fa-arrow-left"></i> Back to Projects
       </a>
-      <h1 class="project-hero-title">DungeonMaze</h1>
+      <h1 class="project-hero-title">Maze Game</h1>
       <div class="tech-tags">
         <span class="tech-tag">Python</span>
-        <span class="tech-tag">Game Logic</span>
+        <span class="tech-tag">Pygame</span>
+        <span class="tech-tag">Game Development</span>
       </div>
       <p class="project-hero-intro">
-        A dungeon maze game built in Python featuring procedural maze generation, interactive
-        player mechanics and logic-based puzzle systems — designed to explore algorithm design
-        and interactive software development.
+        Navigate a monster-filled dungeon, collect the key, defeat anything that stands in your way —
+        and find the exit before your health runs out. A fully playable top-down maze game
+        built entirely in Python with custom pixel-art sprites and real-time combat.
       </p>
     </div>
   </div>
@@ -61,51 +62,162 @@
   <main class="project-content">
     <div class="container">
 
-      <!-- Overview -->
+      <!-- Key Stats -->
       <div class="content-section fade-in">
-        <h2 class="section-heading">Overview</h2>
+        <div class="project-stats-row">
+          <div class="project-stat">
+            <div class="project-stat-number">4</div>
+            <div class="project-stat-label">Monster Types</div>
+          </div>
+          <div class="project-stat">
+            <div class="project-stat-number">4</div>
+            <div class="project-stat-label">Potion Effects</div>
+          </div>
+          <div class="project-stat">
+            <div class="project-stat-number">6</div>
+            <div class="project-stat-label">Potions Per Game</div>
+          </div>
+          <div class="project-stat">
+            <div class="project-stat-number">100%</div>
+            <div class="project-stat-label">Python — No Frameworks</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What Is It -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">What Is It?</h2>
         <p class="body-text">
-          DungeonMaze is a Python-based game project centred around procedural maze generation
-          and interactive gameplay. The project was built to explore core computer science concepts
-          including graph traversal algorithms, game state management and event-driven programming.
+          Maze Game drops you into a dark dungeon maze with one goal: escape alive. You start at the
+          top of the maze with 100 HP and a basic attack. Somewhere inside is a key — and somewhere
+          else is the exit. Between you and freedom are four monsters, six mystery potions, and a
+          layout that rewards exploration.
         </p>
         <p class="body-text">
-          The game generates a unique dungeon maze on each run, challenging the player to navigate
-          through rooms, solve logic puzzles and reach the exit.
+          Every monster encounter is a choice: fight and earn points, or find another path. Potions are
+          a gamble — they could restore your health, boost your attack power, or leave you poisoned
+          and weakened right when you can't afford it. The stronger the monster you take down, the more
+          points land on your score. Beat the boss guarding the exit for maximum reward.
         </p>
       </div>
 
-      <!-- Gameplay Features -->
+      <!-- How to Play -->
       <div class="content-section fade-in">
-        <h2 class="section-heading">Gameplay Features</h2>
+        <h2 class="section-heading">How to Play</h2>
+        <div class="how-to-play-grid">
+          <div class="how-to-play-card">
+            <div class="how-to-play-icon"><i class="fas fa-key"></i></div>
+            <h3>Find the Key</h3>
+            <p>Hunt through the maze to locate the hidden key. You cannot leave without it.</p>
+          </div>
+          <div class="how-to-play-card">
+            <div class="how-to-play-icon"><i class="fas fa-skull-crossbones"></i></div>
+            <h3>Fight or Flee</h3>
+            <p>Move into a monster to engage it in combat. Press Space to attack — but it hits back.</p>
+          </div>
+          <div class="how-to-play-card">
+            <div class="how-to-play-icon"><i class="fas fa-flask"></i></div>
+            <h3>Risk the Potions</h3>
+            <p>Walk over a potion to collect it. Effect is instant — helpful or harmful, no warning.</p>
+          </div>
+          <div class="how-to-play-card">
+            <div class="how-to-play-icon"><i class="fas fa-door-open"></i></div>
+            <h3>Reach the Exit</h3>
+            <p>Find the glowing yellow exit square. With the key in hand, walk in — and you escape.</p>
+          </div>
+        </div>
+
+        <div class="controls-box">
+          <h3 class="controls-title">Controls</h3>
+          <div class="controls-grid">
+            <div class="control-item"><kbd>W A S D</kbd><span>Move through the maze</span></div>
+            <div class="control-item"><kbd>↑ ↓ ← →</kbd><span>Move (arrow keys)</span></div>
+            <div class="control-item"><kbd>Space</kbd><span>Attack during combat</span></div>
+            <div class="control-item"><kbd>Esc</kbd><span>Quit the game</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enemies -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">The Enemies</h2>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <div class="tech-item-icon" style="background:#fef9c3; color:#ca8a04;"><i class="fas fa-ghost"></i></div>
+            <div>
+              <div class="tech-item-name">Weak — 20 pts</div>
+              <div class="tech-item-desc">Low HP (15–25), low damage (3–6). Good for warming up and banking early points.</div>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon" style="background:#dcfce7; color:#16a34a;"><i class="fas fa-dragon"></i></div>
+            <div>
+              <div class="tech-item-name">Normal — 40 pts</div>
+              <div class="tech-item-desc">Balanced threat (25–35 HP, 5–8 dmg). You'll win, but you'll feel it.</div>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon" style="background:#fee2e2; color:#dc2626;"><i class="fas fa-fire"></i></div>
+            <div>
+              <div class="tech-item-name">Strong — 60 pts</div>
+              <div class="tech-item-desc">Serious HP (35–50) and heavy hits (8–12). Guards the exit. Come prepared.</div>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon" style="background:#f3e8ff; color:#9333ea;"><i class="fas fa-crown"></i></div>
+            <div>
+              <div class="tech-item-name">Boss — 100 pts</div>
+              <div class="tech-item-desc">Maximum HP (50–70), brutal damage (10–15). The biggest score — if you survive.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Potions -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">The Potions</h2>
+        <p class="body-text">
+          Six potions are placed randomly across the maze each game. Walk over one and the effect
+          applies immediately — there is no preview. Two help you, two hurt you.
+        </p>
         <ul class="feature-list">
-          <li><i class="fas fa-check-circle"></i> Procedural maze generation using graph-based algorithms</li>
-          <li><i class="fas fa-check-circle"></i> Interactive player movement and navigation</li>
-          <li><i class="fas fa-check-circle"></i> Collision detection and boundary handling</li>
-          <li><i class="fas fa-check-circle"></i> Logic-based puzzle systems within rooms</li>
-          <li><i class="fas fa-check-circle"></i> Game state management (start, play, win, game over)</li>
-          <li><i class="fas fa-check-circle"></i> Score tracking and performance feedback</li>
-          <li><i class="fas fa-check-circle"></i> Unique maze layout generated on each new game</li>
-          <li><i class="fas fa-check-circle"></i> Clean and readable terminal or graphical interface</li>
+          <li><i class="fas fa-heart" style="color:#16a34a;"></i> <strong>Health Potion</strong> — Restores 40 HP instantly. A lifesaver mid-combat.</li>
+          <li><i class="fas fa-fist-raised" style="color:#2563eb;"></i> <strong>Strength Potion</strong> — Boosts your attack by +5 for your next 5 hits.</li>
+          <li><i class="fas fa-skull" style="color:#dc2626;"></i> <strong>Poison</strong> — Deals 20 damage to you immediately. Don't walk into this twice.</li>
+          <li><i class="fas fa-arrow-down" style="color:#ca8a04;"></i> <strong>Weakness</strong> — Reduces your attack by 5 for your next 2 hits. Terrible timing before a boss.</li>
         </ul>
       </div>
 
-      <!-- Technologies Used -->
+      <!-- Technologies -->
       <div class="content-section fade-in">
-        <h2 class="section-heading">Technologies Used</h2>
+        <h2 class="section-heading">Built With</h2>
         <div class="tech-grid">
           <div class="tech-item">
             <div class="tech-item-icon"><i class="fab fa-python"></i></div>
             <div>
               <div class="tech-item-name">Python</div>
-              <div class="tech-item-desc">Core game logic, maze generation and player mechanics</div>
+              <div class="tech-item-desc">All game logic — combat, movement, item collection, scoring and win/lose conditions.</div>
             </div>
           </div>
           <div class="tech-item">
-            <div class="tech-item-icon"><i class="fas fa-dice-d20"></i></div>
+            <div class="tech-item-icon"><i class="fas fa-gamepad"></i></div>
             <div>
-              <div class="tech-item-name">Game Logic</div>
-              <div class="tech-item-desc">State machines, event handling and game loop architecture</div>
+              <div class="tech-item-name">Pygame</div>
+              <div class="tech-item-desc">Rendering the maze, sprites and UI. Handles the game loop, input events and sound.</div>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon"><i class="fas fa-image"></i></div>
+            <div>
+              <div class="tech-item-name">Custom Sprites</div>
+              <div class="tech-item-desc">Pixel-art sprites for the player, all four monster types, the key and potions.</div>
+            </div>
+          </div>
+          <div class="tech-item">
+            <div class="tech-item-icon"><i class="fas fa-volume-up"></i></div>
+            <div>
+              <div class="tech-item-name">Sound Effects</div>
+              <div class="tech-item-desc">Real-time sword hit audio on every attack via Pygame's mixer module.</div>
             </div>
           </div>
         </div>
@@ -120,20 +232,22 @@
         </div>
       </div>
 
-      <!-- Challenges -->
+      <!-- Download -->
       <div class="content-section fade-in">
-        <h2 class="section-heading">Challenges</h2>
+        <h2 class="section-heading">Download &amp; Run</h2>
         <p class="body-text">
-          Implementing a robust maze generation algorithm that consistently produces solvable and
-          interesting dungeon layouts required careful study of graph traversal techniques. Ensuring
-          that every generated maze had a valid path from start to exit without creating isolated
-          regions was a key algorithmic challenge.
+          The game requires Python and Pygame. Once installed, open the project folder in VS Code
+          (or any terminal) and run <code style="background:#f1f5f9; padding:0.15rem 0.45rem; border-radius:4px; font-size:0.875rem;">python MazeGame.py</code>.
         </p>
-        <p class="body-text">
-          Designing a clean game loop that handled player input, state transitions and puzzle logic
-          simultaneously — without introducing race conditions or unresponsive behaviour — required
-          structured event-driven design.
-        </p>
+        <div class="download-section">
+          <div class="download-section-info">
+            <h3><i class="fas fa-file-code"></i> &nbsp;MazeGame.py</h3>
+            <p>Python source code — requires Pygame and the Game/sprites + sound assets folder.</p>
+          </div>
+          <a href="../downloads/MazeGame.py" download="MazeGame.py" class="btn btn-primary">
+            <i class="fas fa-download"></i> Download Source
+          </a>
+        </div>
       </div>
 
       <!-- What I Learned -->
@@ -141,15 +255,16 @@
         <h2 class="section-heading">What I Learned</h2>
         <div class="two-col">
           <p class="body-text">
-            This project taught me how to apply graph theory concepts practically, particularly
-            depth-first search and randomised Prim's algorithm for maze generation. Thinking about
-            procedural generation helped me understand how algorithms can create varied, replayable
-            content from simple rules.
+            Building a real-time game loop taught me a lot about how software has to manage multiple
+            things at once — player input, enemy state, collision detection, UI rendering — all without
+            slowing the game down. Structuring each element as its own class (Player, Monster, Potion)
+            kept the code readable and made it much easier to add features without breaking what already worked.
           </p>
           <p class="body-text">
-            Structuring the game using a state machine pattern significantly improved code clarity
-            and maintainability. Managing game state explicitly rather than relying on ad-hoc
-            conditionals is a lesson that applies well beyond game development.
+            Working with Pygame's event system forced me to think carefully about game state — when
+            is the player allowed to move, when are they locked into combat, what triggers a win or
+            a loss. These state management principles apply far beyond games, into any software that
+            needs to respond to user actions in a defined, predictable way.
           </p>
         </div>
       </div>
@@ -158,11 +273,11 @@
       <div class="content-section fade-in">
         <h2 class="section-heading">Future Improvements</h2>
         <ul class="improvement-list">
-          <li>Add a graphical user interface with sprite-based visuals</li>
-          <li>Implement multiple maze generation algorithms selectable by the player</li>
-          <li>Introduce enemy AI with basic pathfinding behaviour</li>
-          <li>Add a level progression system with increasing difficulty</li>
-          <li>Implement a local high-score leaderboard</li>
+          <li>Randomly generated maze layouts for a different challenge every time</li>
+          <li>Multiple levels with increasing difficulty and new enemy types</li>
+          <li>Animated sprites for movement and combat actions</li>
+          <li>Background music and a fuller sound design</li>
+          <li>A local high-score board to track best runs</li>
         </ul>
       </div>
 
