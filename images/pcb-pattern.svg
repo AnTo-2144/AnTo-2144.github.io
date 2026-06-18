@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+
+  <!-- Background -->
+  <rect width="600" height="600" fill="#8c8c8c"/>
+
+  <!-- === MAIN THROUGH-TRACES — span full tile for seamless tiling === -->
+
+  <!-- Horizontal main traces (y = 150, 300, 450) -->
+  <g stroke="white" stroke-opacity="0.42" stroke-width="1.8" fill="none" stroke-linecap="square">
+    <line x1="0"   y1="150" x2="600" y2="150"/>
+    <line x1="0"   y1="300" x2="600" y2="300"/>
+    <line x1="0"   y1="450" x2="600" y2="450"/>
+  </g>
+
+  <!-- Vertical main traces (x = 150, 300, 450) -->
+  <g stroke="white" stroke-opacity="0.42" stroke-width="1.8" fill="none" stroke-linecap="square">
+    <line x1="150" y1="0"   x2="150" y2="600"/>
+    <line x1="300" y1="0"   x2="300" y2="600"/>
+    <line x1="450" y1="0"   x2="450" y2="600"/>
+  </g>
+
+  <!-- === 45° DIAGONAL TRACES — also seamlessly tile in a square tile === -->
+
+  <!-- NE direction: y = -x + c -->
+  <g stroke="white" stroke-opacity="0.24" stroke-width="1.1" fill="none" stroke-linecap="round">
+    <line x1="0"   y1="300" x2="300" y2="0"/>
+    <line x1="0"   y1="600" x2="600" y2="0"/>
+    <line x1="300" y1="600" x2="600" y2="300"/>
+  </g>
+
+  <!-- SE direction: y = x + b -->
+  <g stroke="white" stroke-opacity="0.24" stroke-width="1.1" fill="none" stroke-linecap="round">
+    <line x1="300" y1="0"   x2="600" y2="300"/>
+    <line x1="0"   y1="0"   x2="600" y2="600"/>
+    <line x1="0"   y1="300" x2="300" y2="600"/>
+  </g>
+
+  <!-- === L-SHAPED BRANCH TRACES — internal PCB routing detail === -->
+  <g stroke="white" stroke-opacity="0.32" stroke-width="1.2" fill="none"
+     stroke-linecap="square" stroke-linejoin="miter">
+
+    <!-- Stubs rising from y=150 -->
+    <polyline points="75,150  75,95"/>
+    <polyline points="225,150 225,95  265,55"/>
+    <polyline points="375,150 375,95"/>
+    <polyline points="525,150 525,95  565,55"/>
+
+    <!-- Stubs dropping from y=150 toward y=300 -->
+    <polyline points="75,205  120,205  150,235  150,300"/>
+    <polyline points="375,205 420,205  450,235  450,300"/>
+    <polyline points="525,200 560,200  560,250"/>
+
+    <!-- Stubs on y=300 -->
+    <polyline points="55,300  55,250   75,230"/>
+    <polyline points="225,260 260,260  300,230 300,150"/>
+
+    <!-- Stubs from y=300 down toward y=450 -->
+    <polyline points="75,355  120,355  150,385  150,450"/>
+    <polyline points="225,355 265,355  300,385  300,450"/>
+    <polyline points="525,355 565,355  565,385"/>
+
+    <!-- Stubs rising from y=450 -->
+    <polyline points="75,450  75,505"/>
+    <polyline points="225,450 225,505  265,540"/>
+    <polyline points="375,450 375,505"/>
+    <polyline points="525,450 525,505  565,540"/>
+
+    <!-- Horizontal connectors bridging main columns (top half) -->
+    <polyline points="150,75  200,75   225,100  225,150"/>
+    <polyline points="300,75  350,75   375,100  375,150"/>
+    <polyline points="450,75  500,75   525,100  525,150"/>
+
+    <!-- Horizontal connectors (middle band) -->
+    <polyline points="150,225 195,225  225,195  225,150"/>
+    <polyline points="300,225 345,225  375,255  375,300"/>
+    <polyline points="450,225 495,225  525,255  525,300"/>
+    <polyline points="150,375 190,375  225,345  225,300"/>
+    <polyline points="300,375 340,375  375,345  375,300"/>
+    <polyline points="450,375 490,375  525,345  525,300"/>
+
+    <!-- Horizontal connectors (lower band) -->
+    <polyline points="150,525 200,525  225,500  225,450"/>
+    <polyline points="300,525 345,525  375,500  375,450"/>
+    <polyline points="450,525 495,525  525,500  525,450"/>
+  </g>
+
+  <!-- === JUNCTION DOTS — at every trace intersection and branch endpoint === -->
+  <g fill="white" fill-opacity="0.48">
+
+    <!-- 3 × 3 main grid nodes -->
+    <circle cx="150" cy="150" r="3.5"/>
+    <circle cx="300" cy="150" r="3.5"/>
+    <circle cx="450" cy="150" r="3.5"/>
+    <circle cx="150" cy="300" r="3.5"/>
+    <circle cx="300" cy="300" r="3.5"/>
+    <circle cx="450" cy="300" r="3.5"/>
+    <circle cx="150" cy="450" r="3.5"/>
+    <circle cx="300" cy="450" r="3.5"/>
+    <circle cx="450" cy="450" r="3.5"/>
+
+    <!-- Half-step nodes along main horizontal traces -->
+    <circle cx="75"  cy="150" r="2.5"/>
+    <circle cx="225" cy="150" r="2.5"/>
+    <circle cx="375" cy="150" r="2.5"/>
+    <circle cx="525" cy="150" r="2.5"/>
+    <circle cx="75"  cy="300" r="2.5"/>
+    <circle cx="225" cy="300" r="2.5"/>
+    <circle cx="375" cy="300" r="2.5"/>
+    <circle cx="525" cy="300" r="2.5"/>
+    <circle cx="75"  cy="450" r="2.5"/>
+    <circle cx="225" cy="450" r="2.5"/>
+    <circle cx="375" cy="450" r="2.5"/>
+    <circle cx="525" cy="450" r="2.5"/>
+
+    <!-- Half-step nodes along main vertical traces -->
+    <circle cx="150" cy="75"  r="2.5"/>
+    <circle cx="300" cy="75"  r="2.5"/>
+    <circle cx="450" cy="75"  r="2.5"/>
+    <circle cx="150" cy="225" r="2.5"/>
+    <circle cx="300" cy="225" r="2.5"/>
+    <circle cx="450" cy="225" r="2.5"/>
+    <circle cx="150" cy="375" r="2.5"/>
+    <circle cx="300" cy="375" r="2.5"/>
+    <circle cx="450" cy="375" r="2.5"/>
+    <circle cx="150" cy="525" r="2.5"/>
+    <circle cx="300" cy="525" r="2.5"/>
+    <circle cx="450" cy="525" r="2.5"/>
+
+    <!-- Branch endpoint dots (small) -->
+    <circle cx="75"  cy="95"  r="2.0"/>
+    <circle cx="375" cy="95"  r="2.0"/>
+    <circle cx="265" cy="55"  r="2.0"/>
+    <circle cx="565" cy="55"  r="2.0"/>
+    <circle cx="120" cy="205" r="2.0"/>
+    <circle cx="420" cy="205" r="2.0"/>
+    <circle cx="560" cy="250" r="2.0"/>
+    <circle cx="55"  cy="250" r="2.0"/>
+    <circle cx="260" cy="260" r="2.0"/>
+    <circle cx="120" cy="355" r="2.0"/>
+    <circle cx="265" cy="355" r="2.0"/>
+    <circle cx="565" cy="385" r="2.0"/>
+    <circle cx="75"  cy="505" r="2.0"/>
+    <circle cx="375" cy="505" r="2.0"/>
+    <circle cx="265" cy="540" r="2.0"/>
+    <circle cx="565" cy="540" r="2.0"/>
+    <circle cx="200" cy="75"  r="2.0"/>
+    <circle cx="350" cy="75"  r="2.0"/>
+    <circle cx="500" cy="75"  r="2.0"/>
+    <circle cx="195" cy="225" r="2.0"/>
+    <circle cx="345" cy="225" r="2.0"/>
+    <circle cx="495" cy="225" r="2.0"/>
+    <circle cx="190" cy="375" r="2.0"/>
+    <circle cx="340" cy="375" r="2.0"/>
+    <circle cx="490" cy="375" r="2.0"/>
+    <circle cx="200" cy="525" r="2.0"/>
+    <circle cx="345" cy="525" r="2.0"/>
+    <circle cx="495" cy="525" r="2.0"/>
+  </g>
+
+  <!-- === COMPONENT PADS — IC chips and SMD resistors === -->
+  <g fill="rgba(255,255,255,0.20)" stroke="white" stroke-opacity="0.38" stroke-width="0.9">
+
+    <!-- IC body pads at three main intersections -->
+    <rect x="141" y="141" width="18" height="18" rx="2.5"/>
+    <rect x="291" y="291" width="18" height="18" rx="2.5"/>
+    <rect x="441" y="441" width="18" height="18" rx="2.5"/>
+
+    <!-- IC pin pads — four sides of each chip body -->
+    <!-- Pins for chip at (150,150) -->
+    <rect x="131" y="146" width="8" height="5" rx="1"/>
+    <rect x="161" y="146" width="8" height="5" rx="1"/>
+    <rect x="146" y="131" width="5" height="8" rx="1"/>
+    <rect x="146" y="161" width="5" height="8" rx="1"/>
+
+    <!-- Pins for chip at (300,300) -->
+    <rect x="281" y="296" width="8" height="5" rx="1"/>
+    <rect x="311" y="296" width="8" height="5" rx="1"/>
+    <rect x="296" y="281" width="5" height="8" rx="1"/>
+    <rect x="296" y="311" width="5" height="8" rx="1"/>
+
+    <!-- Pins for chip at (450,450) -->
+    <rect x="431" y="446" width="8" height="5" rx="1"/>
+    <rect x="461" y="446" width="8" height="5" rx="1"/>
+    <rect x="446" y="431" width="5" height="8" rx="1"/>
+    <rect x="446" y="461" width="5" height="8" rx="1"/>
+
+    <!-- SMD resistor pads at secondary nodes -->
+    <rect x="70"  y="70"  width="10" height="6" rx="1.5"/>
+    <rect x="220" y="220"              width="10" height="6" rx="1.5"/>
+    <rect x="370" y="370"              width="10" height="6" rx="1.5"/>
+    <rect x="520" y="520"              width="10" height="6" rx="1.5"/>
+    <rect x="220" y="70"               width="10" height="6" rx="1.5"/>
+    <rect x="70"  y="370"              width="6"  height="10" rx="1.5"/>
+    <rect x="520" y="220"              width="6"  height="10" rx="1.5"/>
+    <rect x="70"  y="520"              width="10" height="6" rx="1.5"/>
+    <rect x="370" y="70"               width="10" height="6" rx="1.5"/>
+  </g>
+
+</svg>

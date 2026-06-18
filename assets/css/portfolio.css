@@ -4,13 +4,13 @@
 
 /* --- CSS Variables --- */
 :root {
-  --color-bg:           #ffffff;
-  --color-bg-alt:       #f8fafc;
+  --color-bg:           transparent;
+  --color-bg-alt:       rgba(248, 250, 252, 0.65);
   --color-bg-dark:      #0f172a;
   --color-primary:      #2563eb;
   --color-primary-dark: #1d4ed8;
   --color-text:         #0f172a;
-  --color-text-muted:   #64748b;
+  --color-text-muted:   #334155;
   --color-border:       #e2e8f0;
   --color-card:         #ffffff;
   --color-icon-bg:      #eff6ff;
@@ -36,6 +36,11 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #8c8c8c;
+  background-image: url('../../images/pcb-pattern.svg');
+  background-repeat: repeat;
+  background-size: 600px 600px;
+  background-attachment: fixed;
 }
 
 body {
@@ -74,6 +79,16 @@ img {
 #projects,
 #contact {
   padding: 100px 0;
+}
+
+/* Text-heavy sections that have no explicit background need
+   a semi-transparent white so text remains readable on the gray PCB */
+#home {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.project-content {
+  background: rgba(255, 255, 255, 0.65);
 }
 
 /* Alternating background for visual rhythm */
@@ -1710,5 +1725,10 @@ kbd {
   .showcase-grid         { grid-template-columns: 1fr; gap: 1.25rem; }
   .projects-page-title   { font-size: 1.85rem; }
   .showcase-card         { height: 420px; }
+
+  /* iOS Safari doesn't support background-attachment: fixed — switch to scroll */
+  html {
+    background-attachment: scroll;
+  }
 
 }
