@@ -114,25 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
       current = (index + items.length) % items.length;
       const item = items[current];
       lbImg.style.opacity = '0';
-      const temp = new Image();
-      temp.onload = () => {
-        lbImg.src         = item.dataset.src;
-        lbImg.alt         = item.dataset.caption || '';
-        lbCap.textContent = item.dataset.caption || '';
-        lbImg.style.opacity = '1';
-      };
-      temp.src = item.dataset.src;
+      lbImg.src         = item.dataset.src;
+      lbImg.alt         = item.dataset.caption || '';
+      lbCap.textContent = item.dataset.caption || '';
+      lbImg.onload = () => { lbImg.style.opacity = '1'; };
     };
 
     const open = (index) => {
       show(index);
       lightbox.classList.add('open');
-      document.documentElement.style.overflow = 'hidden';
     };
 
     const close = () => {
       lightbox.classList.remove('open');
-      document.documentElement.style.overflow = '';
     };
 
     items.forEach((item, i) => item.addEventListener('click', () => open(i)));
