@@ -1180,8 +1180,8 @@ a.project-card:hover {
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 .showcase-card {
@@ -1356,10 +1356,10 @@ a.project-card:hover {
 
 /* ============================================================
    SHOWCASE CARD — OVERLAY REVEAL VARIANT
-   Hover: full-card transparent dark film + white text slides up
+   Default: clean image + title only at bottom
+   Hover:   semi-transparent dark film + full text slides up
    ============================================================ */
 
-/* Image: full brightness, no dimming by default */
 .overlay-reveal .showcase-card-img {
   opacity: 1;
   transition: transform 0.5s ease;
@@ -1369,38 +1369,68 @@ a.project-card:hover {
   transform: scale(1.04);
 }
 
-/* Overlay: covers entire card, transparent by default → dark film on hover */
+/* Full-card overlay — bottom gradient by default, full film on hover */
 .overlay-reveal .showcase-overlay {
   top: 0;
-  background: transparent;
-  transition: background 0.4s ease;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0) 42%);
+  transition: background 0.4s ease;
 }
 
 .overlay-reveal:hover .showcase-overlay {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.58);
 }
 
-/* Content wrapper: hidden + shifted down by default, slides up on hover */
-.overlay-reveal .showcase-overlay-content {
+/* Always-visible project name — fades out when hover content appears */
+.showcase-always-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.overlay-reveal:hover .showcase-always-title {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+/* Hover-only content block — absolutely positioned so it never affects layout */
+.overlay-reveal .showcase-overlay-content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  opacity: 0;
+  transform: translateY(18px);
   transition: opacity 0.38s ease 0.06s, transform 0.38s ease 0.06s;
+  pointer-events: none;
 }
 
 .overlay-reveal:hover .showcase-overlay-content {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
 }
 
-/* Desc: always visible inside the wrapper (wrapper controls visibility) */
+/* Desc: visible inside wrapper — wrapper controls overall visibility */
 .overlay-reveal .showcase-overlay-desc {
-  max-height: 200px;
+  max-height: 100px;
   opacity: 1;
   transform: none;
   margin-top: 0.5rem;
+}
+
+/* Link inside the content block */
+.overlay-reveal .showcase-overlay-content .showcase-overlay-link {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 
@@ -1630,7 +1660,7 @@ kbd {
   .how-to-play-grid   { grid-template-columns: repeat(2, 1fr); }
   .controls-grid      { grid-template-columns: 1fr; }
   .download-section   { flex-direction: column; align-items: flex-start; }
-  .showcase-grid      { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .showcase-grid      { grid-template-columns: 1fr; gap: 1.5rem; }
 
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
