@@ -1586,6 +1586,99 @@ kbd {
 
 
 /* ============================================================
+   HOW TO RUN SECTION
+   ============================================================ */
+
+.run-sub {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.run-sub:first-child {
+  margin-top: 0;
+}
+
+.run-prerequisites {
+  margin-bottom: 1.75rem;
+}
+
+.run-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  counter-reset: run-counter;
+}
+
+.run-list li {
+  counter-increment: run-counter;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 0.75rem;
+  row-gap: 0.35rem;
+  align-items: start;
+}
+
+.run-list li::before {
+  content: counter(run-counter);
+  grid-column: 1;
+  grid-row: 1 / -1;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.run-step-label {
+  grid-column: 2;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.run-code {
+  grid-column: 2;
+  display: block;
+  font-family: 'Menlo', 'Consolas', 'Courier New', monospace;
+  font-size: 0.82rem;
+  background: #0f172a;
+  color: #7dd3fc;
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #1e293b;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.run-note {
+  grid-column: 2;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.run-note a,
+.run-prerequisites a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+
+/* ============================================================
    SCROLL ANIMATIONS
    ============================================================ */
 

@@ -136,6 +136,52 @@
         </div>
       </div>
 
+      <!-- How to Run -->
+      <div class="content-section fade-in">
+        <h2 class="section-heading">How to Run</h2>
+
+        <div class="run-prerequisites">
+          <h3 class="run-sub">Prerequisites</h3>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python 3.10+</a></li>
+            <li><i class="fas fa-check-circle"></i> <a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener noreferrer">Docker &amp; Docker Compose</a></li>
+            <li><i class="fas fa-check-circle"></i> Git</li>
+          </ul>
+        </div>
+
+        <div class="run-steps">
+          <h3 class="run-sub">Steps</h3>
+          <ol class="run-list">
+            <li>
+              <span class="run-step-label">Clone the repository</span>
+              <code class="run-code">git clone https://github.com/AnTo-2144/lip-balm-production-line.git</code>
+            </li>
+            <li>
+              <span class="run-step-label">Navigate into the project folder</span>
+              <code class="run-code">cd lip-balm-production-line</code>
+            </li>
+            <li>
+              <span class="run-step-label">Build and start all services</span>
+              <code class="run-code">docker compose up --build</code>
+              <p class="run-note">This starts the HMI, MES, CMMS, InfluxDB and Grafana containers in one step.</p>
+            </li>
+            <li>
+              <span class="run-step-label">Open the HMI (operator interface)</span>
+              <code class="run-code">http://localhost:8080</code>
+            </li>
+            <li>
+              <span class="run-step-label">Open the Grafana dashboards</span>
+              <code class="run-code">http://localhost:3000</code>
+              <p class="run-note">Default credentials — username: <strong>admin</strong> &nbsp;/&nbsp; password: <strong>admin</strong></p>
+            </li>
+            <li>
+              <span class="run-step-label">Stop all services when finished</span>
+              <code class="run-code">docker compose down</code>
+            </li>
+          </ol>
+        </div>
+      </div>
+
       <!-- Software Architecture -->
       <div class="content-section fade-in">
         <h2 class="section-heading">Software Architecture</h2>
